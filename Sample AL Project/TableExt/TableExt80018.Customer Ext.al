@@ -13,10 +13,6 @@ tableextension 80018 "Customer Blocks" extends Customer
             DataClassification = CustomerContent;
             Caption = 'Customer Blocked';
             Editable = false;
-
         }
     }
-
-    var
-        myInt: Integer;
 }
