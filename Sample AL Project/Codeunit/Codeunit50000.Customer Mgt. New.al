@@ -8,6 +8,9 @@ codeunit 50000 "Customer Mgt. New"
 
     end;
 
+    var
+        Text001: Label 'You''ve just changed the customer sale type from "%1" to "%2"';
+
     /// <summary>
     /// ChangeCustomerBlocked is EventSubscriber on OnAfterValidateEvent event of the Customer table
     /// </summary>
@@ -33,5 +36,17 @@ codeunit 50000 "Customer Mgt. New"
         Cust.TestField("Blocked Ext", false);
         Cust.Get(SalesHeader."Bill-to Customer No.");
         Cust.TestField("Blocked Ext", false);
+    end;
+
+    /// <summary>
+    /// OnAfterValidateCustomerSaleTypeEvent for test purpoces
+    /// </summary>
+    /// <param name="CurrFieldNo">Integer.</param>
+    /// <param name="Rec">VAR Record Customer.</param>
+    /// <param name="xRec">VAR Record Customer.</param>
+    [EventSubscriber(ObjectType::Table, Database::Customer, 'OnAfterValidateEvent', 'Customer Sale Type', false, false)]
+    local procedure OnAfterValidateCustomerSaleTypeEvent(CurrFieldNo: Integer; var Rec: Record Customer; var xRec: Record Customer)
+    begin
+        Message(StrSubstNo(Text001, format(xRec."Customer Sale Type"), format(Rec."Customer Sale Type")));
     end;
 }

@@ -14,5 +14,16 @@ tableextension 80018 "Customer Blocks" extends Customer
             Caption = 'Customer Blocked';
             Editable = false;
         }
+
+        /// <summary>
+        /// This field is defining type of sale to the current customer
+        /// </summary>
+        field(50001; "Customer Sale Type"; Enum "Customer Sale Type")
+        {
+            DataClassification = CustomerContent;
+            trigger OnValidate()
+            begin
+            end;
+        }
     }
 }

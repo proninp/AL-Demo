@@ -3,6 +3,12 @@
   <file datatype="xml" source-language="en-US" target-language="ru-RU" original="Sample AL Project">
     <body>
       <group id="body">
+        <trans-unit id="Codeunit 1501232436 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You've just changed the customer sale type from %1</source>
+          <target>Вы только что изменили тип клиента с %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Mgt. New - NamedType Text001</note>
+        </trans-unit>
         <trans-unit id="Report 3965088890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Blocked Customer List</source>
           <target>Список заблокированных клиентов</target>
@@ -32,6 +38,48 @@
           <target>Клиент заблокирован</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Blocks - Field Blocked Ext - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3602273202 - Field 2553830313 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>Customer Sale Type</source>
+          <target>Клиент Тип Продажи</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Blocks - Field Customer Sale Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2553830313 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <target> </target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Customer Sale Type - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2553830313 - EnumValue 2182902910 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retail Chain</source>
+          <target>Торговая сеть</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Customer Sale Type - EnumValue Retail Chain - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2553830313 - EnumValue 4212713257 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Distributor</source>
+          <target>Дистрибьютор</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Customer Sale Type - EnumValue Distributor - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2553830313 - EnumValue 4156733458 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sole proprietorships</source>
+          <target>Частный предприниматель</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Customer Sale Type - EnumValue Sole proprietorships  - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2553830313 - EnumValue 3430309726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Limited Liability Companies</source>
+          <target>Общество с ограниченной ответственностью</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Customer Sale Type - EnumValue Limited Liability Companies - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2553830313 - EnumValue 4157531576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Private buyer</source>
+          <target>Частный покупатель</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Customer Sale Type - EnumValue Private buyer - Property Caption</note>
         </trans-unit>
       </group>
     </body>
