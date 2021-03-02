@@ -3,6 +3,30 @@
   <file datatype="xml" source-language="en-US" target-language="ru-RU" original="Sample AL Project">
     <body>
       <group id="body">
+        <trans-unit id="Report 3965088890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Blocked Customer List</source>
+          <target>Список заблокированных клиентов</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Blocked Customer List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3965088890 - ReportColumn 949215307 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <target>Номер</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Blocked Customer List - ReportColumn No - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3965088890 - ReportColumn 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target>Наименование</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Blocked Customer List - ReportColumn Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3059448296 - Action 3690657540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2901867346">
+          <source>Show Blocked Customers List</source>
+          <target>Показать список заблокированных клиентов</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer List Page Ext - Action ShowBlockedCustList - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3602273202 - Field 3522954819 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Customer Blocked</source>
           <target>Клиент заблокирован</target>
