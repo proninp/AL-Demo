@@ -14,7 +14,6 @@ tableextension 80018 "Customer Blocks" extends Customer
             Caption = 'Customer Blocked';
             Editable = false;
         }
-
         /// <summary>
         /// This field is defining type of sale to the current customer
         /// </summary>

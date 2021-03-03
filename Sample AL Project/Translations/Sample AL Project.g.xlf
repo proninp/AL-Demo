@@ -4,9 +4,59 @@
     <body>
       <group id="body">
         <trans-unit id="Codeunit 1501232436 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You've just changed the customer sale type from %1</source>
+          <source>You've just changed the customer sale type from "%1" to "%2"</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Mgt. New - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Page 3629594724 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer contacts with orders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Customer contacts with orders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3629594724 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Process,Report,Approve,New Document,Request Approval,Customer,Navigate,Prices &amp; Discounts</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Customer contacts with orders - Property PromotedActionCategories</note>
+        </trans-unit>
+        <trans-unit id="Page 3629594724 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the involved entry or record, according to the specified number series.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Customer contacts with orders - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3629594724 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the customer's name. This name will appear on all sales documents for the customer.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Customer contacts with orders - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3629594724 - Control 966287263 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies an additional part of the name.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Customer contacts with orders - Control Name 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3629594724 - Control 3660300303 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the postal code.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Customer contacts with orders - Control Post Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3629594724 - Control 284764054 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the country/region of the address.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Customer contacts with orders - Control Country/Region Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3629594724 - Control 3986423421 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the customer's telephone number.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Customer contacts with orders - Control Phone No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3629594724 - Control 3993128796 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the person you regularly contact when you do business with this customer.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Customer contacts with orders - Control Contact - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3629594724 - Control 553464652 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies a code for the salesperson who normally handles this customer's account.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Customer contacts with orders - Control Salesperson Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 3965088890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Blocked Customer List</source>
@@ -22,6 +72,71 @@
           <source>Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Blocked Customer List - ReportColumn Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Query 1275529860 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Contacts With Orders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query Customer Contacts With Orders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Query 1275529860 - QueryColumn 1795468512 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Items Quantity Sum</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query Customer Contacts With Orders - QueryColumn Qty - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Query 1275529860 - QueryColumn 1500692294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query Customer Contacts With Orders - QueryColumn SH_No_ - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Query 1275529860 - QueryColumn 2131136169 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query Customer Contacts With Orders - QueryColumn SH_Posting_Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Query 1275529860 - QueryColumn 2460430468 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query Customer Contacts With Orders - QueryColumn SH_Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Query 1275529860 - QueryColumn 1066792394 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query Customer Contacts With Orders - QueryColumn No_ - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Query 1275529860 - QueryColumn 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query Customer Contacts With Orders - QueryColumn Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Query 1275529860 - QueryColumn 18111246 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query Customer Contacts With Orders - QueryColumn Name_2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Query 1275529860 - QueryColumn 970161446 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query Customer Contacts With Orders - QueryColumn Post_Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Query 1275529860 - QueryColumn 1057316559 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country/Region Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query Customer Contacts With Orders - QueryColumn Country_Region_Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Query 1275529860 - QueryColumn 1902680775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Phone No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query Customer Contacts With Orders - QueryColumn Phone_No_ - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Query 1275529860 - QueryColumn 3993128796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contact</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query Customer Contacts With Orders - QueryColumn Contact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Query 1275529860 - QueryColumn 1836249769 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Salesperson Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query Customer Contacts With Orders - QueryColumn Salesperson_Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 3059448296 - Action 3690657540 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2901867346">
           <source>Show Blocked Customers List</source>
