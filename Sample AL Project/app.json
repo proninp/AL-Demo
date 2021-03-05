@@ -23,5 +23,6 @@
   "contextSensitiveHelpUrl": "https://SampleALProject.com/help/",
   "showMyCode": true,
   "runtime": "6.0",
-  "features": ["TranslationFile"]
+  "features": ["TranslationFile"],
+  "target": "OnPrem"
 }
