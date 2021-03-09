@@ -4,13 +4,12 @@
 page 50001 "JSON Sample Data List"
 {
     ApplicationArea = All;
-    Caption = 'List of JSON Sample Data';
+    Caption = 'JSON Sample Data List';
     Editable = false;
     PageType = List;
     SourceTable = "JSON Sample Data";
     SourceTableView = order(ascending);
     UsageCategory = Lists;
-
     layout
     {
         area(content)
@@ -37,7 +36,7 @@ page 50001 "JSON Sample Data List"
 
     actions
     {
-        area(processing)
+        area(Processing)
         {
             action(Refresh)
             {

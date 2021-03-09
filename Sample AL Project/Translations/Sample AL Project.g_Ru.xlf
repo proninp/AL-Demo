@@ -3,11 +3,64 @@
   <file datatype="xml" source-language="en-US" target-language="ru-RU" original="Sample AL Project">
     <body>
       <group id="body">
+        <trans-unit id="Table 3391782450 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <target>Операция Но.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table JSON Sample Data - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3391782450 - Field 3768133165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sample Text</source>
+          <target>Пример Текст</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table JSON Sample Data - Field Sample Text - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3391782450 - Field 3810680820 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sample Integer</source>
+          <target>Пример Целочисленный</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table JSON Sample Data - Field Sample Integer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3391782450 - Field 4049474023 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sample Decimal</source>
+          <target>Пример Дробный</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table JSON Sample Data - Field Sample Decimal - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1501232436 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>You've just changed the customer sale type from "%1" to "%2"</source>
           <target>Вы только что изменили тип клиента с "%1" на "%2"</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Customer Mgt. New - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1721536971 - NamedType 905978648" size-unit="char" translate="yes" xml:space="preserve">
+          <source>^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit E-mail Mgt. - NamedType EmailPattern</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3607311245 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The call to the web service failed.</source>
+          <target>Вызов веб сервиса не удался.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refresh JSON Sample Data - NamedType ErrText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3607311245 - NamedType 1460689422" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The web service returned an error message:\Status code: %1\Description: %2</source>
+          <target>Веб сервис вернуо ошибку:\Статус: %1\Описание: %2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refresh JSON Sample Data - NamedType ErrText002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3607311245 - NamedType 822992805" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Could not find a token with key %1</source>
+          <target>Не удалость найти токен с ключом %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refresh JSON Sample Data - NamedType ErrText003</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3607311245 - NamedType 1929477016" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Could not find a token with path %1</source>
+          <target>Не удалость найти токен с путем %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refresh JSON Sample Data - NamedType ErrText004</note>
         </trans-unit>
         <trans-unit id="Page 3629594724 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer contacts with orders</source>
@@ -68,6 +121,18 @@
           <target>Указывает код для продавца, который обычно обрабатывает счет этого клиента.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Customer contacts with orders - Control Salesperson Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2253475152 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>List of JSON Sample Data</source>
+          <target>Пример Данных JSON Список</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JSON Sample Data List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2253475152 - Action 2026913255 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Refresh JSON Data</source>
+          <target>Обновить данные JSON</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page JSON Sample Data List - Action Refresh - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3965088890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Blocked Customer List</source>

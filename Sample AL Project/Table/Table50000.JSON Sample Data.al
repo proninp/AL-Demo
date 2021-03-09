@@ -1,29 +1,28 @@
 table 50000 "JSON Sample Data"
 {
-    DataClassification = CusomerContent;
+    DataClassification = CustomerContent;
     fields
     {
-
         field(1; "Entry No."; BigInteger)
         {
-            DataClassification = CusomerContent;
+            DataClassification = CustomerContent;
             Caption = 'Entry No.';
-            ApplicationArea = All;
+            AutoIncrement = true;
         }
-        field(10; "string"; Text[250])
+        field(10; "Sample Text"; Text[250])
         {
-            Caption = 'string';
-            ApplicationArea = All;
+            DataClassification = CustomerContent;
+            Caption = 'Sample Text';
         }
-        field(20; "integer"; Integer)
+        field(20; "Sample Integer"; Integer)
         {
-            Caption = 'integer';
-            ApplicationArea = All;
+            DataClassification = CustomerContent;
+            Caption = 'Sample Integer';
         }
-        field(30; "decimal"; Text[250])
+        field(30; "Sample Decimal"; Text[250])
         {
-            Caption = 'decimal';
-            ApplicationArea = All;
+            DataClassification = CustomerContent;
+            Caption = 'Sample Decimal';
         }
 
     }
@@ -36,9 +35,12 @@ table 50000 "JSON Sample Data"
     }
 
 
+    /// <summary>
+    /// RefreshFunction for refrsh JSON Data
+    /// </summary>
     procedure RefreshFunction();
     var
-        Refresh: Codeunit Refresh;
+        Refresh: Codeunit "Refresh JSON Sample Data";
     begin
         Refresh.RefreshJson();
     end;

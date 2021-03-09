@@ -3,6 +3,17 @@
 /// </summary>
 codeunit 50002 "Refresh JSON Sample Data"
 {
+    trigger OnRun()
+    begin
+
+    end;
+
+    var
+        ErrText001: Label 'The call to the web service failed.';
+        ErrText002: Label 'The web service returned an error message:\Status code: %1\Description: %2';
+        ErrText003: Label 'Could not find a token with key %1';
+        ErrText004: Label 'Could not find a token with path %1';
+
     /// <summary>
     /// RefreshFunction for refrsh JSON Data
     /// </summary>
@@ -23,14 +34,10 @@ codeunit 50002 "Refresh JSON Sample Data"
         // Simple web service call
         HttpClient.DefaultRequestHeaders.Add('User-Agent', 'Dynamics 365');
         if not HttpClient.Get('https://bespredel.name/iGetMyJson.php', ResponseMessage) then
-            Error('The call to the web service failed.');
+            Error(ErrText001);
 
         if not ResponseMessage.IsSuccessStatusCode then
-            error('The web service returned an error message:\' +
-                  'Status code: %1' +
-                  'Description: %2',
-                  ResponseMessage.HttpStatusCode,
-                  ResponseMessage.ReasonPhrase);
+            Error(ErrText002, ResponseMessage.HttpStatusCode, ResponseMessage.ReasonPhrase);
 
         ResponseMessage.Content.ReadAs(JsonText);
 
@@ -58,9 +65,7 @@ codeunit 50002 "Refresh JSON Sample Data"
         JsonData: Record "JSON Sample Data";
     begin
         JsonObject := JsonToken.AsObject;
-
-        JsonData.init;
-
+        Clear(JsonData); // To reset autoincrement PK
         JsonData."Sample Text" := COPYSTR(GetJsonToken(JsonObject, 'string').AsValue.AsText, 1, 250);
         JsonData."Sample Integer" := GetJsonToken(JsonObject, 'integer').AsValue.AsInteger;
         JsonData."Sample Decimal" := COPYSTR(GetJsonToken(JsonObject, 'decimal').AsValue.AsText, 1, 250);
@@ -77,7 +82,7 @@ codeunit 50002 "Refresh JSON Sample Data"
     procedure GetJsonToken(JsonObject: JsonObject; TokenKey: text) JsonToken: JsonToken;
     begin
         if not JsonObject.Get(TokenKey, JsonToken) then
-            Error('Could not find a token with key %1', TokenKey);
+            Error(ErrText003, TokenKey);
     end;
 
     /// <summary>
@@ -89,7 +94,7 @@ codeunit 50002 "Refresh JSON Sample Data"
     procedure SelectJsonToken(JsonObject: JsonObject; Path: text) JsonToken: JsonToken;
     begin
         if not JsonObject.SelectToken(Path, JsonToken) then
-            Error('Could not find a token with path %1', Path);
+            Error(ErrText004, Path);
     end;
 
 }
