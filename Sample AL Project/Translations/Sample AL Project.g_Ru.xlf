@@ -9,23 +9,53 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table JSON Sample Data - Field Entry No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3391782450 - Field 3768133165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sample Text</source>
-          <target>Пример Текст</target>
+        <trans-unit id="Table 3391782450 - Field 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date</source>
+          <target>Дата</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table JSON Sample Data - Field Sample Text - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table JSON Sample Data - Field Date - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3391782450 - Field 3810680820 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sample Integer</source>
-          <target>Пример Целочисленный</target>
+        <trans-unit id="Table 3391782450 - Field 3292898750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Local Name</source>
+          <target>Локальное наименование</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table JSON Sample Data - Field Sample Integer - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table JSON Sample Data - Field Local Name - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3391782450 - Field 4049474023 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sample Decimal</source>
-          <target>Пример Дробный</target>
+        <trans-unit id="Table 3391782450 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target>Наименование</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table JSON Sample Data - Field Sample Decimal - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table JSON Sample Data - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3391782450 - Field 2542713143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country Code</source>
+          <target>Код страны</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table JSON Sample Data - Field Country Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3391782450 - Field 744835066 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fixed</source>
+          <target>Фиксированный</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table JSON Sample Data - Field Fixed - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3391782450 - Field 4172416525 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Global</source>
+          <target>Глобальный</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table JSON Sample Data - Field Global - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3391782450 - Field 1153184326 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Launch Year</source>
+          <target>Дата введения в календарь</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table JSON Sample Data - Field Launch Year - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3391782450 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <target>Тип</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table JSON Sample Data - Field Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Codeunit 1501232436 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>You've just changed the customer sale type from "%1" to "%2"</source>

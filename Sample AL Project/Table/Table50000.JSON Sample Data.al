@@ -1,3 +1,6 @@
+/// <summary>
+/// Table JSON Sample Data (ID 50000).
+/// </summary>
 table 50000 "JSON Sample Data"
 {
     DataClassification = CustomerContent;
@@ -9,22 +12,47 @@ table 50000 "JSON Sample Data"
             Caption = 'Entry No.';
             AutoIncrement = true;
         }
-        field(10; "Sample Text"; Text[250])
+        field(10; "Date"; Date)
         {
             DataClassification = CustomerContent;
-            Caption = 'Sample Text';
+            Caption = 'Date';
         }
-        field(20; "Sample Integer"; Integer)
+        field(20; "Local Name"; Text[250])
         {
             DataClassification = CustomerContent;
-            Caption = 'Sample Integer';
+            Caption = 'Local Name';
         }
-        field(30; "Sample Decimal"; Text[250])
+        field(30; "Name"; Text[250])
         {
             DataClassification = CustomerContent;
-            Caption = 'Sample Decimal';
+            Caption = 'Name';
         }
-
+        field(40; "Country Code"; Code[10])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Country Code';
+            TableRelation = "Country/Region";
+        }
+        field(50; "Fixed"; Boolean)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Fixed';
+        }
+        field(60; "Global"; Boolean)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Global';
+        }
+        field(70; "Launch Year"; Integer)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Launch Year';
+        }
+        field(80; "Type"; Text[100])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Type';
+        }
     }
     keys
     {

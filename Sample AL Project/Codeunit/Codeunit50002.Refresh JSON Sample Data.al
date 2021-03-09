@@ -20,20 +20,20 @@ codeunit 50002 "Refresh JSON Sample Data"
     procedure RefreshJson();
     var
         JsonData: Record "JSON Sample Data";
-        HttpClient: HttpClient;
+        HttpClientL: HttpClient;
         ResponseMessage: HttpResponseMessage;
-        JsonToken: JsonToken;
-        JsonValue: JsonValue;
-        JsonObject: JsonObject;
-        JsonArray: JsonArray;
+        JsonTokenL: JsonToken;
+        JsonObjectL: JsonObject;
+        JsonArrayL: JsonArray;
         JsonText: text;
+        WebLink: text;
         i: Integer;
     begin
+        WebLink := StrSubstNo('https://date.nager.at/api/v2/publicholidays/%1/ru', format(Date2DMY(Today(), 3)));
         JsonData.DeleteAll;
-
         // Simple web service call
-        HttpClient.DefaultRequestHeaders.Add('User-Agent', 'Dynamics 365');
-        if not HttpClient.Get('https://bespredel.name/iGetMyJson.php', ResponseMessage) then
+        HttpClientL.DefaultRequestHeaders.Add('User-Agent', 'Dynamics 365');
+        if not HttpClientL.Get(WebLink, ResponseMessage) then
             Error(ErrText001);
 
         if not ResponseMessage.IsSuccessStatusCode then
@@ -42,15 +42,15 @@ codeunit 50002 "Refresh JSON Sample Data"
         ResponseMessage.Content.ReadAs(JsonText);
 
         // Process JSON response
-        if not JsonArray.ReadFrom(JsonText) then begin
+        if not JsonArrayL.ReadFrom(JsonText) then begin
             // probably single object
-            JsonToken.ReadFrom(JsonText);
-            Insert(JsonToken);
+            JsonTokenL.ReadFrom(JsonText);
+            Insert(JsonTokenL);
         end else begin
             // array
-            for i := 0 to JsonArray.Count - 1 do begin
-                JsonArray.Get(i, JsonToken);
-                Insert(JsonToken);
+            for i := 0 to JsonArrayL.Count - 1 do begin
+                JsonArrayL.Get(i, JsonTokenL);
+                Insert(JsonTokenL);
             end;
         end;
     end;
@@ -58,19 +58,25 @@ codeunit 50002 "Refresh JSON Sample Data"
     /// <summary>
     /// Insert JSON Data
     /// </summary>
-    /// <param name="JsonToken">JsonToken.</param>
-    procedure Insert(JsonToken: JsonToken);
+    /// <param name="JsonTokenP">JsonToken.</param>
+    procedure Insert(JsonTokenP: JsonToken);
     var
-        JsonObject: JsonObject;
-        JsonData: Record "JSON Sample Data";
+        JsonObjectL: JsonObject;
+        JsonValueL: JsonValue;
+        JsonDataL: Record "JSON Sample Data";
     begin
-        JsonObject := JsonToken.AsObject;
-        Clear(JsonData); // To reset autoincrement PK
-        JsonData."Sample Text" := COPYSTR(GetJsonToken(JsonObject, 'string').AsValue.AsText, 1, 250);
-        JsonData."Sample Integer" := GetJsonToken(JsonObject, 'integer').AsValue.AsInteger;
-        JsonData."Sample Decimal" := COPYSTR(GetJsonToken(JsonObject, 'decimal').AsValue.AsText, 1, 250);
-
-        JsonData.Insert;
+        JsonObjectL := JsonTokenP.AsObject;
+        Clear(JsonDataL); // To reset autoincrement PK
+        JsonDataL."Date" := GetJsonToken(JsonObjectL, 'date').AsValue.AsDate();
+        JsonDataL."Local Name" := COPYSTR(GetJsonToken(JsonObjectL, 'localName').AsValue.AsText, 1, MaxStrLen(JsonDataL."Local Name"));
+        JsonDataL."Name" := COPYSTR(GetJsonToken(JsonObjectL, 'name').AsValue.AsText, 1, MaxStrLen(JsonDataL.Name));
+        JsonDataL."Country Code" := COPYSTR(GetJsonToken(JsonObjectL, 'countryCode').AsValue.AsCode(), 1, MaxStrLen(JsonDataL."Country Code"));
+        JsonDataL."Fixed" := GetJsonToken(JsonObjectL, 'fixed').AsValue.AsBoolean();
+        JsonDataL."Global" := GetJsonToken(JsonObjectL, 'global').AsValue.AsBoolean();
+        if not (GetJsonToken(JsonObjectL, 'launchYear').AsValue.IsNull or GetJsonToken(JsonObjectL, 'launchYear').AsValue.IsNull) then
+            JsonDataL."Launch Year" := GetJsonToken(JsonObjectL, 'launchYear').AsValue.AsInteger();
+        JsonDataL."Type" := COPYSTR(GetJsonToken(JsonObjectL, 'type').AsValue.AsText, 1, MaxStrLen(JsonDataL.Type));
+        JsonDataL.Insert;
     end;
 
     /// <summary>
@@ -96,5 +102,4 @@ codeunit 50002 "Refresh JSON Sample Data"
         if not JsonObject.SelectToken(Path, JsonToken) then
             Error(ErrText004, Path);
     end;
-
 }

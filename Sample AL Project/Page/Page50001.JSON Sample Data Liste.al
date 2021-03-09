@@ -17,15 +17,32 @@ page 50001 "JSON Sample Data List"
             repeater(General)
             {
 
-                field("Sample Text"; "Sample Text")
+                field("Local Name"; Rec."Local Name")
                 {
                     ApplicationArea = All;
                 }
-                field("Sample Integer"; "Sample Integer")
+                field("Name"; Rec."Name")
                 {
                     ApplicationArea = All;
                 }
-                field("Sample Decimal"; "Sample Decimal")
+                field("Country Code"; Rec."Country Code")
+                {
+                    ApplicationArea = All;
+                }
+                field("Fixed"; Rec."Fixed")
+                {
+                    ApplicationArea = All;
+                }
+                field("Global"; Rec."Global")
+                {
+                    ApplicationArea = All;
+                }
+                field("Launch Year"; Rec."Launch Year")
+                {
+                    ApplicationArea = All;
+                    BlankZero = true;
+                }
+                field("Type"; Rec."Type")
                 {
                     ApplicationArea = All;
                 }
