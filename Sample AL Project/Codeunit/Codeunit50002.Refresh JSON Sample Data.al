@@ -82,10 +82,10 @@ codeunit 50002 "Refresh JSON Sample Data"
     end;
 
     /// <summary>
-    /// GetJsonToken.
+    /// GetJsonToken function to get JSON token or to give an error if there is no data for that
     /// </summary>
-    /// <param name="JsonObject">JsonObject.</param>
-    /// <param name="TokenKey">text.</param>
+    /// <param name="JsonObject">JsonObject</param>
+    /// <param name="TokenKey">text</param>
     /// <returns>Return variable JsonToken of type JsonToken.</returns>
     local procedure GetJsonToken(JsonObject: JsonObject; TokenKey: text) JsonToken: JsonToken;
     begin
