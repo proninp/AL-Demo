@@ -78,6 +78,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refresh JSON Sample Data - NamedType ErrText004</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3607311245 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is no data to show.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refresh JSON Sample Data - NamedType Text001</note>
+        </trans-unit>
         <trans-unit id="Page 3629594724 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer contacts with orders</source>
           <note from="Developer" annotates="general" priority="2"></note>

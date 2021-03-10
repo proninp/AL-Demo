@@ -13,6 +13,7 @@ codeunit 50002 "Refresh JSON Sample Data"
         ErrText002: Label 'The web service returned an error message:\Status code: %1\Description: %2';
         ErrText003: Label 'Could not find a token with key %1';
         ErrText004: Label 'Could not find a token with path %1';
+        Text001: Label 'There is no data to show.';
 
     /// <summary>
     /// RefreshFunction for refrsh JSON Data
@@ -28,6 +29,7 @@ codeunit 50002 "Refresh JSON Sample Data"
         JsonText: text;
         WebLink: text;
         i: Integer;
+        ListAr: List of [Text];
     begin
         WebLink := StrSubstNo('https://date.nager.at/api/v2/publicholidays/%1/ru', format(Date2DMY(Today(), 3)));
         JsonData.DeleteAll;
@@ -73,7 +75,7 @@ codeunit 50002 "Refresh JSON Sample Data"
         JsonDataL."Country Code" := COPYSTR(GetJsonToken(JsonObjectL, 'countryCode').AsValue.AsCode(), 1, MaxStrLen(JsonDataL."Country Code"));
         JsonDataL."Fixed" := GetJsonToken(JsonObjectL, 'fixed').AsValue.AsBoolean();
         JsonDataL."Global" := GetJsonToken(JsonObjectL, 'global').AsValue.AsBoolean();
-        if not (GetJsonToken(JsonObjectL, 'launchYear').AsValue.IsNull or GetJsonToken(JsonObjectL, 'launchYear').AsValue.IsNull) then
+        if not (GetJsonToken(JsonObjectL, 'launchYear').AsValue.IsNull) then
             JsonDataL."Launch Year" := GetJsonToken(JsonObjectL, 'launchYear').AsValue.AsInteger();
         JsonDataL."Type" := COPYSTR(GetJsonToken(JsonObjectL, 'type').AsValue.AsText, 1, MaxStrLen(JsonDataL.Type));
         JsonDataL.Insert;
@@ -85,7 +87,7 @@ codeunit 50002 "Refresh JSON Sample Data"
     /// <param name="JsonObject">JsonObject.</param>
     /// <param name="TokenKey">text.</param>
     /// <returns>Return variable JsonToken of type JsonToken.</returns>
-    procedure GetJsonToken(JsonObject: JsonObject; TokenKey: text) JsonToken: JsonToken;
+    local procedure GetJsonToken(JsonObject: JsonObject; TokenKey: text) JsonToken: JsonToken;
     begin
         if not JsonObject.Get(TokenKey, JsonToken) then
             Error(ErrText003, TokenKey);
@@ -97,9 +99,40 @@ codeunit 50002 "Refresh JSON Sample Data"
     /// <param name="JsonObject">JsonObject.</param>
     /// <param name="Path">text.</param>
     /// <returns>Return variable JsonToken of type JsonToken.</returns>
-    procedure SelectJsonToken(JsonObject: JsonObject; Path: text) JsonToken: JsonToken;
+    local procedure SelectJsonToken(JsonObject: JsonObject; Path: text) JsonToken: JsonToken;
     begin
         if not JsonObject.SelectToken(Path, JsonToken) then
             Error(ErrText004, Path);
     end;
+
+    /// <summary>
+    /// WorkWithListsSample
+    /// </summary>
+    procedure WorkWithListsSample()
+    var
+        JsonObjectL: Record "JSON Sample Data";
+        ListText: List of [Text];
+        AllLocalNames: Text;
+        i: Integer;
+    begin
+        if not JsonObjectL.FindSet() then begin
+            Message(Text001);
+            exit;
+        end;
+        repeat
+            ListText.Add(JsonObjectL."Local Name");
+        until JsonObjectL.Next() = 0;
+        for i := 1 to ListText.Count do begin
+            if AllLocalNames <> '' then
+                AllLocalNames += '\';
+            AllLocalNames += ListText.Get(i);
+        end;
+        Message(AllLocalNames);
+    end;
+
+    procedure WorkWithListsSample(i: Integer)
+    begin
+
+    end;
+
 }
