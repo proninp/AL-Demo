@@ -129,5 +129,4 @@ codeunit 50002 "Refresh JSON Sample Data"
         end;
         Message(LocalNames);
     end;
-
 }

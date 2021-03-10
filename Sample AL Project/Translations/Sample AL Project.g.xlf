@@ -83,6 +83,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Refresh JSON Sample Data - NamedType Text001</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1211854983 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The file name must not be empty!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - NamedType ErrText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1211854983 - NamedType 1460689422" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The URL must not be empty!</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - NamedType ErrText002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1211854983 - NamedType 822992805" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The call to the web service failed.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - NamedType ErrText003</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1211854983 - NamedType 1929477016" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The web service returned an error message:\Status code: %1\Description: %2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - NamedType ErrText004</note>
+        </trans-unit>
         <trans-unit id="Page 3629594724 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer contacts with orders</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -237,6 +257,16 @@
           <source>Is E-mail corrected</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Contact List Page Ext - Control Is E-mail Correct - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2222101513 - Action 3867252348 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2669032087">
+          <source>Download Bank List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Directory List Page Ext - Action DownloadBankList - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2222101513 - Action 3867252348 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2669032087">
+          <source>Downloads Bank List from cbr.ru by current date state</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Bank Directory List Page Ext - Action DownloadBankList - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="TableExtension 3602273202 - Field 3522954819 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Customer Blocked</source>
