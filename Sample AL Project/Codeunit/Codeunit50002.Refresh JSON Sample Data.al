@@ -106,13 +106,13 @@ codeunit 50002 "Refresh JSON Sample Data"
     end;
 
     /// <summary>
-    /// WorkWithListsSample
+    /// WorkWithListsSample function represents how to work with List data type
     /// </summary>
     procedure WorkWithListsSample()
     var
         JsonObjectL: Record "JSON Sample Data";
         ListText: List of [Text];
-        AllLocalNames: Text;
+        LocalNames: Text;
         i: Integer;
     begin
         if not JsonObjectL.FindSet() then begin
@@ -123,16 +123,11 @@ codeunit 50002 "Refresh JSON Sample Data"
             ListText.Add(JsonObjectL."Local Name");
         until JsonObjectL.Next() = 0;
         for i := 1 to ListText.Count do begin
-            if AllLocalNames <> '' then
-                AllLocalNames += '\';
-            AllLocalNames += ListText.Get(i);
+            if LocalNames <> '' then
+                LocalNames += '\';
+            LocalNames += ListText.Get(i);
         end;
-        Message(AllLocalNames);
-    end;
-
-    procedure WorkWithListsSample(i: Integer)
-    begin
-
+        Message(LocalNames);
     end;
 
 }
