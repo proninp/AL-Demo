@@ -1,5 +1,7 @@
 /// <summary>
 /// Codeunit Refresh JSON Sample Data (ID 50002).
+/// This unit was created with ALRunner command:
+/// ALRunner: Generate objects by parsing a JSON object from a URL
 /// </summary>
 codeunit 50002 "Refresh JSON Sample Data"
 {

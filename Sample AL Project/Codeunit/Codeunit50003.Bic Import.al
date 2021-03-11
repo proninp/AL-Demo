@@ -5,7 +5,9 @@ codeunit 50003 "Bic Import"
 {
     trigger OnRun()
     begin
-        DownloadFileWithWebClient()
+        //DownloadFileWithWebClient();
+        SetParams(Text001);
+        ReadZip();
     end;
 
     var
@@ -15,9 +17,13 @@ codeunit 50003 "Bic Import"
         ErrText002: Label 'The URL must not be empty!';
         ErrText003: Label 'The call to the web service failed.';
         ErrText004: Label 'The web service returned an error message:\Status code: %1\Description: %2';
+        ErrText005: label '%1 table must be temporary.';
         Text001: Label 'http://www.cbr.ru/s/newbik';
         Text002: label 'D:\BicZip.zip'; // Here might be your personal or server directoty
 
+    /// <summary>
+    /// ReadZip function to download content from web link as InStream
+    /// </summary>
     procedure ReadZip()
     var
         Client: HttpClient;
@@ -37,6 +43,7 @@ codeunit 50003 "Bic Import"
 
     local procedure UnzipResponse(ResponseInStreamP: InStream)
     var
+        XmlBuffer: Record "XML Buffer";
         TextEntries: List of [Text];
         TempBlob: Codeunit "Temp Blob";
         DataCompression: Codeunit "Data Compression"; // In previous version it was Zip Stream Wrapper unit
@@ -44,6 +51,9 @@ codeunit 50003 "Bic Import"
         TextEntry: Text;
         TextEntryLen: Integer;
         i: Integer;
+
+        StartTime: DateTime;
+        Dur: Duration;
     begin
         DataCompression.OpenZipArchive(ResponseInStreamP, false);
         DataCompression.GetEntryList(TextEntries);
@@ -53,12 +63,134 @@ codeunit 50003 "Bic Import"
             TextEntries.Get(i, TextEntry);
             DataCompression.ExtractEntry(TextEntry, ResponseOutStream, TextEntryLen);
             TempBlob.CreateInStream(ResponseInStreamP, TextEncoding::UTF8);
+            XmlBuffer.Reset();
+            XmlBuffer.DeleteAll();
+
+            StartTime := CurrentDateTime();
+
+            //XmlBuffer.LoadFromStream(ResponseInStreamP); // This is one of several methods that you can use for parse xml, but it is really slow
+            ParseXml(ResponseInStreamP);
+
+            Dur := CurrentDateTime - StartTime;
+            Message(Format(Dur));
             // Here will be XmlParser
         end;
     end;
 
+    local procedure ParseXml(ResponseInStreamP: InStream)
+    var
+        BankDirectotyTmp: Record "Bank Directory" temporary;
+        XmlDoc: XmlDocument;
+        Node: XmlNode;
+        EDNodes: XmlNodeList;
+        Element: XmlElement;
+        Attributes: XmlAttributeCollection;
+        Attribute: XmlAttribute;
+
+        i: Integer;
+        j: Integer;
+    begin
+        if not BankDirectotyTmp.IsTemporary then
+            Error(ErrText005);
+
+        BankDirectotyTmp.Reset();
+        BankDirectotyTmp.DeleteAll();
+
+        XmlDocument.ReadFrom(ResponseInStreamP, XmlDoc);
+        XmlDoc.GetRoot(Element); // ED807
+        EDNodes := Element.GetChildElements(); // BICDirectoryEntry
+        for i := 1 to EDNodes.Count do begin
+            EDNodes.Get(i, Node);
+            Element := Node.AsXmlElement();
+            Attributes := Element.Attributes();
+            if Attributes.Get(1, Attribute) then
+                ParseBicDirectoty(BankDirectotyTmp, Attribute, Element);
+        end;
+    end;
+
+    local procedure ParseBicDirectoty(var BankDirectotyTmpP: Record "Bank Directory" temporary; var AttributeP: XmlAttribute; var ElementP: XmlElement)
+    var
+        BicEntryNodes: XmlNodeList;
+        AccNodes: XmlNodeList;
+        RstrNodes: XmlNodeList;
+        Node: XmlNode;
+        Element: XmlElement;
+        BicAttributeLabel: Label 'BIC';
+        ParticipantInfoLabel: Label 'ParticipantInfo';
+        AccountsLabel: label 'Accounts';
+        i: Integer;
+    begin
+        if not (AttributeP.Name = BicAttributeLabel) then
+            exit;
+
+        if not BankDirectotyTmpP.Get(AttributeP.Value) then begin
+            BankDirectotyTmpP.Init();
+            BankDirectotyTmpP.BIC := AttributeP.Value;
+            BankDirectotyTmpP.Insert();
+        end;
+        if not ElementP.HasElements() then
+            exit;
+        BicEntryNodes := ElementP.GetChildElements();
+        if BicEntryNodes.Count = 0 then
+            exit;
+        for i := 1 to BicEntryNodes.Count do begin
+            BicEntryNodes.Get(i, Node);
+            if Node.IsXmlElement() then begin
+                Element := Node.AsXmlElement();
+                case Element.Name of
+                    ParticipantInfoLabel:
+                        ParseParticipantInfo(BankDirectotyTmpP, Element);
+                    AccountsLabel:
+                        ParseAccounts(BankDirectotyTmpP, Element);
+                end;
+            end;
+        end;
+    end;
+
+    local procedure ParseParticipantInfo(var BankDirectotyTmpP: Record "Bank Directory" temporary; var ElementP: XmlElement)
+    var
+        Attributes: XmlAttributeCollection;
+        Attribute: XmlAttribute;
+    begin
+        // TODO something to parse ParticipantInfo information
+        if ElementP.HasAttributes then begin
+            Attributes := ElementP.Attributes();
+            foreach Attribute in Attributes do begin
+                case Attribute.Name of
+                    'NameP':
+                        begin
+
+                        end;
+                    'RegN':
+                        begin
+
+                        end;
+                    'CntrCd':
+                        begin
+
+                        end;
+                    'Rgn':
+                        begin
+
+                        end;
+                end;
+            end;
+        end;
+
+    end;
+
+    local procedure ParseAccounts(var BankDirectotyTmpP: Record "Bank Directory" temporary; var ElementP: XmlElement)
+    var
+        Attributes: XmlAttributeCollection;
+        Attribute: XmlAttribute;
+    begin
+        // TODO something to parse Accounts information
+        // Im not shure that we really need to do it
+    end;
+
     /// <summary>
-    /// DownloadFileWithWebClient function just for archive downloading with WebClient class
+    /// DownloadFileWithWebClient() function just for archive downloading with WebClient class
+    /// It's a sample piece of code that we can use for downloading files from web without dialog message
     /// </summary>
     procedure DownloadFileWithWebClient()
     var

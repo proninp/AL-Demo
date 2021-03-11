@@ -113,6 +113,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - NamedType Text002</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1211854983 - Method 3896767080 - NamedType 652499222" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BIC</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - Method ParseXml - NamedType BicAttributeLabel</note>
+        </trans-unit>
         <trans-unit id="Page 3629594724 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer contacts with orders</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -287,6 +292,56 @@
           <source>Customer Sale Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Blocks - Field Customer Sale Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3204535122 - Field 461174990 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4110144097">
+          <source>License Revocation Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Directory Ext - Field LWRS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3204535122 - Field 1120810978 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4110144097">
+          <source>License Revocation Status Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Directory Ext - Field LWRS Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3204535122 - Field 3372678858 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4110144097">
+          <source>Urgent Remittance Restriction Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Directory Ext - Field URRS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3204535122 - Field 918601286 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4110144097">
+          <source>Urgent Remittance Restriction Status Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Directory Ext - Field URRS Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3204535122 - Field 1736521051 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4110144097">
+          <source>Moratorium on Creditors Requirement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Directory Ext - Field MRTR - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3204535122 - Field 2008294839 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4110144097">
+          <source>Moratorium on Creditors Requirement Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Directory Ext - Field MRTR Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3204535122 - Field 948601651 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4110144097">
+          <source>Participant Status Active</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Directory Ext - Field PSAC - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3204535122 - Field 4242143151 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4110144097">
+          <source>Participant Status Active Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Directory Ext - Field PSAC Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3204535122 - Field 2175454581 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4110144097">
+          <source>Participant Status Deleted</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Directory Ext - Field PSDL - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3204535122 - Field 3657538337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4110144097">
+          <source>Participant Status Deleted Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Directory Ext - Field PSDL Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Profile 1546683883 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Accountant role center Profile</source>
