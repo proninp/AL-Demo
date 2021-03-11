@@ -103,6 +103,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - NamedType ErrText004</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1211854983 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>http://www.cbr.ru/s/newbik</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1211854983 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D:\BicZip.zip</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - NamedType Text002</note>
+        </trans-unit>
         <trans-unit id="Page 3629594724 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer contacts with orders</source>
           <note from="Developer" annotates="general" priority="2"></note>
