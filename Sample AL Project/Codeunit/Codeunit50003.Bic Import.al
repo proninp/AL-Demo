@@ -126,6 +126,7 @@ codeunit 50003 "Bic Import"
         if not BankDirectotyTmpP.Get(AttributeP.Value) then begin
             BankDirectotyTmpP.Init();
             BankDirectotyTmpP.BIC := AttributeP.Value;
+            BankDirectotyTmpP.SystemCreatedAt := CurrentDateTime;
             BankDirectotyTmpP.Insert();
         end;
         if not ElementP.HasElements() then
@@ -159,20 +160,36 @@ codeunit 50003 "Bic Import"
                 case Attribute.Name of
                     'NameP':
                         begin
-
-                        end;
-                    'RegN':
-                        begin
-
-                        end;
-                    'CntrCd':
-                        begin
-
+                            BankDirectotyTmpP."Short Name" := Copystr(Attribute.Value, 1, MaxStrLen(BankDirectotyTmpP."Short Name"));
+                            BankDirectotyTmpP."Full Name" := Copystr(Attribute.Value, 1, MaxStrLen(BankDirectotyTmpP."Full Name"));
                         end;
                     'Rgn':
-                        begin
-
+                        BankDirectotyTmpP."Region Code" := Attribute.Value;
+                    'Ind':
+                        BankDirectotyTmpP."Post Code" := Attribute.Value;
+                    'Tnp':
+                        case true of
+                            lowercase(Attribute.Value) In ['г.', 'г']:
+                                BankDirectotyTmpP."Area Type" := 1; // Gorod
+                            lowercase(Attribute.Value) In ['п.', 'п']:
+                                BankDirectotyTmpP."Area Type" := 2; // Poselok
+                            lowercase(Attribute.Value) In ['с.', 'с']:
+                                BankDirectotyTmpP."Area Type" := 3; // Selo
+                            lowercase(Attribute.Value) In ['пгт.', 'пгт']:
+                                BankDirectotyTmpP."Area Type" := 4; // Poselok gorodskogo tipa
+                            lowercase(Attribute.Value) In ['ст-ца']:
+                                BankDirectotyTmpP."Area Type" := 5; // stanitsa
+                            lowercase(Attribute.Value) In ['аул']:
+                                BankDirectotyTmpP."Area Type" := 6; // aul
+                            lowercase(Attribute.Value) In ['рп.', 'рп']:
+                                BankDirectotyTmpP."Area Type" := 7; // Rabochiy podelok
+                            else
+                                BankDirectotyTmpP."Area Type" := 0; // unknown
                         end;
+                    'Nnp':
+                        BankDirectotyTmpP."Area Name" := Attribute.Value;
+                    'Adr':
+                        BankDirectotyTmpP.Address := CopyStr(Attribute.Value, 1, MaxStrLen(BankDirectotyTmpP.Address);
                 end;
             end;
         end;
