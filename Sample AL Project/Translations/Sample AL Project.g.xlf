@@ -103,20 +103,40 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - NamedType ErrText004</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1211854983 - NamedType 1291780399" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 table must be temporary.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - NamedType ErrText005</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1211854983 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>http://www.cbr.ru/s/newbik</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - NamedType Text001</note>
         </trans-unit>
         <trans-unit id="Codeunit 1211854983 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
-          <source>D:\BicZip.zip</source>
+          <source>SampleDir\BicZip.zip</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - NamedType Text002</note>
         </trans-unit>
-        <trans-unit id="Codeunit 1211854983 - Method 3896767080 - NamedType 652499222" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 1211854983 - Method 762061446 - NamedType 652499222" size-unit="char" translate="yes" xml:space="preserve">
           <source>BIC</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - Method ParseXml - NamedType BicAttributeLabel</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - Method ParseBicDirectoty - NamedType BicAttributeLabel</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1211854983 - Method 762061446 - NamedType 2204680873" size-unit="char" translate="yes" xml:space="preserve">
+          <source>:ParticipantInfo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - Method ParseBicDirectoty - NamedType ParticipantInfoLabel</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1211854983 - Method 762061446 - NamedType 1023445200" size-unit="char" translate="yes" xml:space="preserve">
+          <source>:Accounts</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - Method ParseBicDirectoty - NamedType AccountsLabel</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1211854983 - Method 4218457748 - NamedType 131278037" size-unit="char" translate="yes" xml:space="preserve">
+          <source>:RstrList</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - Method ParseRstrList - NamedType RstrListLabel</note>
         </trans-unit>
         <trans-unit id="Page 3629594724 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer contacts with orders</source>
@@ -342,6 +362,21 @@
           <source>Participant Status Deleted Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Directory Ext - Field PSDL Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3204535122 - Field 1098178941 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4110144097">
+          <source>Date In</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Directory Ext - Field Date In - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3204535122 - Field 462562822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4110144097">
+          <source>Date Out</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Directory Ext - Field Date Out - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3204535122 - Field 3069292748 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4110144097">
+          <source>Uniq Identifier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Directory Ext - Field UID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Profile 1546683883 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Accountant role center Profile</source>

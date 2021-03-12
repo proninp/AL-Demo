@@ -1,1 +1,1 @@
-﻿{"Added":[{"Id":90000,"Kind":17,"Name":"Bank Directory Ext","PackagePath":"/src/TableExt/TableExt90000.Bank%20Directory%20Ext.al"}],"Modified":[{"Id":50003,"Kind":11,"Name":"Bic Import","PackagePath":"/src/Codeunit/Codeunit50003.Bic%20Import.al"}],"Removed":[]}
+﻿{"Added":[],"Modified":[{"Id":50003,"Kind":11,"Name":"Bic Import","PackagePath":"/src/Codeunit/Codeunit50003.Bic%20Import.al"}],"Removed":[]}

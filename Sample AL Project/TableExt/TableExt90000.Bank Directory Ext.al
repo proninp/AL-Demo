@@ -55,6 +55,21 @@ tableextension 90000 "Bank Directory Ext" extends "Bank Directory"
             DataClassification = CustomerContent;
             Caption = 'Participant Status Deleted Date';
         }
+        field(50100; "Date In"; Date)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Date In';
+        }
+        field(50110; "Date Out"; Date)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Date Out';
+        }
+        field(50120; "UID"; Text[30])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Uniq Identifier';
+        }
 
     }
 }

@@ -5,7 +5,6 @@ codeunit 50003 "Bic Import"
 {
     trigger OnRun()
     begin
-        //DownloadFileWithWebClient();
         SetParams(Text001);
         ReadZip();
     end;
@@ -19,7 +18,7 @@ codeunit 50003 "Bic Import"
         ErrText004: Label 'The web service returned an error message:\Status code: %1\Description: %2';
         ErrText005: label '%1 table must be temporary.';
         Text001: Label 'http://www.cbr.ru/s/newbik';
-        Text002: label 'D:\BicZip.zip'; // Here might be your personal or server directoty
+        Text002: label 'SampleDir\BicZip.zip'; // Here might be your personal or server directoty
 
     /// <summary>
     /// ReadZip function to download content from web link as InStream
@@ -73,42 +72,31 @@ codeunit 50003 "Bic Import"
 
             Dur := CurrentDateTime - StartTime;
             Message(Format(Dur));
-            // Here will be XmlParser
         end;
     end;
 
     local procedure ParseXml(ResponseInStreamP: InStream)
     var
-        BankDirectotyTmp: Record "Bank Directory" temporary;
+        BankDirectoty: Record "Bank Directory";
         XmlDoc: XmlDocument;
         Node: XmlNode;
         EDNodes: XmlNodeList;
         Element: XmlElement;
         Attributes: XmlAttributeCollection;
         Attribute: XmlAttribute;
-
-        i: Integer;
-        j: Integer;
     begin
-        if not BankDirectotyTmp.IsTemporary then
-            Error(ErrText005);
-
-        BankDirectotyTmp.Reset();
-        BankDirectotyTmp.DeleteAll();
-
         XmlDocument.ReadFrom(ResponseInStreamP, XmlDoc);
         XmlDoc.GetRoot(Element); // ED807
         EDNodes := Element.GetChildElements(); // BICDirectoryEntry
-        for i := 1 to EDNodes.Count do begin
-            EDNodes.Get(i, Node);
+        foreach Node in EDNodes do begin
             Element := Node.AsXmlElement();
             Attributes := Element.Attributes();
             if Attributes.Get(1, Attribute) then
-                ParseBicDirectoty(BankDirectotyTmp, Attribute, Element);
+                ParseBicDirectoty(BankDirectoty, Attribute, Element);
         end;
     end;
 
-    local procedure ParseBicDirectoty(var BankDirectotyTmpP: Record "Bank Directory" temporary; var AttributeP: XmlAttribute; var ElementP: XmlElement)
+    local procedure ParseBicDirectoty(var BankDirectotyP: Record "Bank Directory"; var AttributeP: XmlAttribute; var ElementP: XmlElement)
     var
         BicEntryNodes: XmlNodeList;
         AccNodes: XmlNodeList;
@@ -116,84 +104,157 @@ codeunit 50003 "Bic Import"
         Node: XmlNode;
         Element: XmlElement;
         BicAttributeLabel: Label 'BIC';
-        ParticipantInfoLabel: Label 'ParticipantInfo';
-        AccountsLabel: label 'Accounts';
-        i: Integer;
+        ParticipantInfoLabel: Label ':ParticipantInfo';
+        AccountsLabel: label ':Accounts';
+        ElementName: Text;
     begin
         if not (AttributeP.Name = BicAttributeLabel) then
             exit;
 
-        if not BankDirectotyTmpP.Get(AttributeP.Value) then begin
-            BankDirectotyTmpP.Init();
-            BankDirectotyTmpP.BIC := AttributeP.Value;
-            BankDirectotyTmpP.SystemCreatedAt := CurrentDateTime;
-            BankDirectotyTmpP.Insert();
+        if not BankDirectotyP.Get(AttributeP.Value) then begin
+            BankDirectotyP.Init();
+            BankDirectotyP.BIC := AttributeP.Value;
+            BankDirectotyP.SystemCreatedAt := CurrentDateTime;
+            BankDirectotyP.Insert();
         end;
         if not ElementP.HasElements() then
             exit;
         BicEntryNodes := ElementP.GetChildElements();
-        if BicEntryNodes.Count = 0 then
-            exit;
-        for i := 1 to BicEntryNodes.Count do begin
-            BicEntryNodes.Get(i, Node);
+        foreach Node in BicEntryNodes do begin
             if Node.IsXmlElement() then begin
-                Element := Node.AsXmlElement();
+                Element := Node.AsXmlElement(); // For Debug purpose
+                ElementName := Element.Name;
                 case Element.Name of
                     ParticipantInfoLabel:
-                        ParseParticipantInfo(BankDirectotyTmpP, Element);
+                        ParseParticipantInfo(BankDirectotyP, Element);
                     AccountsLabel:
-                        ParseAccounts(BankDirectotyTmpP, Element);
+                        ParseAccounts(BankDirectotyP, Element);
+                // TODO something to parse SWBICS information
                 end;
             end;
         end;
     end;
 
-    local procedure ParseParticipantInfo(var BankDirectotyTmpP: Record "Bank Directory" temporary; var ElementP: XmlElement)
+    local procedure ParseParticipantInfo(var BankDirectotyP: Record "Bank Directory"; var ElementP: XmlElement)
     var
         Attributes: XmlAttributeCollection;
         Attribute: XmlAttribute;
     begin
-        // TODO something to parse ParticipantInfo information
         if ElementP.HasAttributes then begin
             Attributes := ElementP.Attributes();
             foreach Attribute in Attributes do begin
                 case Attribute.Name of
                     'NameP':
                         begin
-                            BankDirectotyTmpP."Short Name" := Copystr(Attribute.Value, 1, MaxStrLen(BankDirectotyTmpP."Short Name"));
-                            BankDirectotyTmpP."Full Name" := Copystr(Attribute.Value, 1, MaxStrLen(BankDirectotyTmpP."Full Name"));
+                            BankDirectotyP."Short Name" := Copystr(Attribute.Value, 1, MaxStrLen(BankDirectotyP."Short Name"));
+                            BankDirectotyP."Full Name" := Copystr(Attribute.Value, 1, MaxStrLen(BankDirectotyP."Full Name"));
                         end;
                     'Rgn':
-                        BankDirectotyTmpP."Region Code" := Attribute.Value;
+                        BankDirectotyP."Region Code" := Attribute.Value;
                     'Ind':
-                        BankDirectotyTmpP."Post Code" := Attribute.Value;
+                        BankDirectotyP."Post Code" := Attribute.Value;
                     'Tnp':
                         case true of
                             lowercase(Attribute.Value) In ['г.', 'г']:
-                                BankDirectotyTmpP."Area Type" := 1; // Gorod
+                                BankDirectotyP."Area Type" := BankDirectotyP."Area Type"::Gorod;
                             lowercase(Attribute.Value) In ['п.', 'п']:
-                                BankDirectotyTmpP."Area Type" := 2; // Poselok
+                                BankDirectotyP."Area Type" := BankDirectotyP."Area Type"::Poselok;
                             lowercase(Attribute.Value) In ['с.', 'с']:
-                                BankDirectotyTmpP."Area Type" := 3; // Selo
+                                BankDirectotyP."Area Type" := BankDirectotyP."Area Type"::Selo;
                             lowercase(Attribute.Value) In ['пгт.', 'пгт']:
-                                BankDirectotyTmpP."Area Type" := 4; // Poselok gorodskogo tipa
+                                BankDirectotyP."Area Type" := BankDirectotyP."Area Type"::"Poselok gorodskogo tipa";
                             lowercase(Attribute.Value) In ['ст-ца']:
-                                BankDirectotyTmpP."Area Type" := 5; // stanitsa
+                                BankDirectotyP."Area Type" := BankDirectotyP."Area Type"::Stanica;
                             lowercase(Attribute.Value) In ['аул']:
-                                BankDirectotyTmpP."Area Type" := 6; // aul
+                                BankDirectotyP."Area Type" := BankDirectotyP."Area Type"::Aul;
                             lowercase(Attribute.Value) In ['рп.', 'рп']:
-                                BankDirectotyTmpP."Area Type" := 7; // Rabochiy podelok
+                                BankDirectotyP."Area Type" := BankDirectotyP."Area Type"::"Rabochiy poselok";
                             else
-                                BankDirectotyTmpP."Area Type" := 0; // unknown
+                                BankDirectotyP."Area Type" := 0; // unknown
                         end;
                     'Nnp':
-                        BankDirectotyTmpP."Area Name" := Attribute.Value;
+                        BankDirectotyP."Area Name" := Attribute.Value;
                     'Adr':
-                        BankDirectotyTmpP.Address := CopyStr(Attribute.Value, 1, MaxStrLen(BankDirectotyTmpP.Address);
-                end;
-            end;
-        end;
+                        BankDirectotyP.Address := CopyStr(Attribute.Value, 1, MaxStrLen(BankDirectotyP.Address));
+                    'DateIn':
+                        BankDirectotyP."Date In" := ConvertDate(Attribute.Value);
+                    'DateOut':
+                        BankDirectotyP."Date Out" := ConvertDate(Attribute.Value);
+                    'PtType':
+                        case Attribute.Value of
+                            '00':
+                                BankDirectotyP.Type := BankDirectotyP.Type::GRKC;
+                            '10':
+                                BankDirectotyP.Type := BankDirectotyP.Type::RKC;
+                            '12':
+                                BankDirectotyP.Type := BankDirectotyP.Type::Bank;
+                            '15':
+                                BankDirectotyP.Type := BankDirectotyP.Type::"Comm.Bank";
+                            '16':
+                                BankDirectotyP.Type := BankDirectotyP.Type::"Sber.Bank";
+                            '20':
+                                BankDirectotyP.Type := BankDirectotyP.Type::"Shar.Comm.Bank";
+                            '30':
+                                BankDirectotyP.Type := BankDirectotyP.Type::"Private Comm.Bank";
+                            '40':
+                                BankDirectotyP.Type := BankDirectotyP.Type::"Cooper.Bank";
+                            '51':
+                                BankDirectotyP.Type := BankDirectotyP.Type::AgroPromBank;
+                            '52':
+                                BankDirectotyP.Type := BankDirectotyP.Type::"Bank Filial";
+                            '60':
+                                BankDirectotyP.Type := BankDirectotyP.Type::"Comm.Bamk Filial";
+                            '65':
+                                BankDirectotyP.Type := BankDirectotyP.Type::"SB Branch";
+                            '71':
+                                BankDirectotyP.Type := BankDirectotyP.Type::"Shar.Comm.Bank Filial";
+                            '75':
+                                BankDirectotyP.Type := BankDirectotyP.Type::"Private Bank Filial";
+                            '78':
+                                BankDirectotyP.Type := BankDirectotyP.Type::"Cooper.Bank Filial";
+                            '90':
+                                BankDirectotyP.Type := BankDirectotyP.Type::"AgroPromBank Filial";
+                            '99':
+                                BankDirectotyP.Type := BankDirectotyP.Type::"Field CB Branch";
+                            else
+                                BankDirectotyP.Type := 0; // unknown
+                        end;
+                    'ParticipantStatus':
+                        case Attribute.Value of
+                            'PSAC':
+                                begin
+                                    if not BankDirectotyP.PSAC then begin
+                                        BankDirectotyP.PSAC := true;
+                                        BankDirectotyP."PSAC Date" := Today();
+                                    end;
+                                    if BankDirectotyP.PSDL then begin
+                                        BankDirectotyP.PSDL := false;
+                                        BankDirectotyP."PSDL Date" := 0D;
+                                    end;
+                                end;
 
+                            'PSDL':
+                                begin
+                                    if not BankDirectotyP.PSDL then begin
+                                        BankDirectotyP.PSDL := true;
+                                        BankDirectotyP."PSDL Date" := Today();
+                                    end;
+                                    if BankDirectotyP.PSAC then begin
+                                        BankDirectotyP.PSAC := false;
+                                        BankDirectotyP."PSAC Date" := 0D;
+                                    end;
+                                end;
+                            'UID':
+                                BankDirectotyP.UID := Attribute.Value;
+                        end;
+                end; // Attribute.Name
+            end; // foreach
+        end; // ElementP.HasAttributes
+
+        if ElementP.HasElements() then
+            ParseRstrList(ElementP, BankDirectotyP);
+
+        BankDirectotyP.Modify();
     end;
 
     local procedure ParseAccounts(var BankDirectotyTmpP: Record "Bank Directory" temporary; var ElementP: XmlElement)
@@ -202,7 +263,51 @@ codeunit 50003 "Bic Import"
         Attribute: XmlAttribute;
     begin
         // TODO something to parse Accounts information
-        // Im not shure that we really need to do it
+        // I'm not shure that we really need to do it
+    end;
+
+    local procedure ParseRstrList(var ElementP: XmlElement; var BankDirectotyP: Record "Bank Directory")
+    var
+        NodeList: XmlNodeList;
+        Node: XmlNode;
+        Element: XmlElement;
+        Attributes: XmlAttributeCollection;
+        Attribute: XmlAttribute;
+        ElementName: Text;
+        RstrListLabel: label ':RstrList';
+    begin
+        NodeList := ElementP.GetChildElements();
+        foreach Node in NodeList do begin
+            if Node.IsXmlElement then begin
+                Element := Node.AsXmlElement();
+                ElementName := Element.Name; // For Debug purpose
+                if (Element.Name = RstrListLabel) and Element.HasAttributes() then begin
+                    Attributes := Element.Attributes();
+                    foreach Attribute in Attributes do begin
+                        case Attribute.Name of
+                            'Rstr':
+                                case Attribute.Value of
+                                    'LWRS':
+                                        BankDirectotyP.LWRS := true;
+                                    'URRS':
+                                        BankDirectotyP.URRS := true;
+                                    'MRTR':
+                                        BankDirectotyP.MRTR := true;
+                                end;
+                            'RstrDate':
+                                case true of
+                                    BankDirectotyP.LWRS:
+                                        BankDirectotyP."LWRS Date" := ConvertDate(Attribute.Value);
+                                    BankDirectotyP.URRS:
+                                        BankDirectotyP."URRS Date" := ConvertDate(Attribute.Value);
+                                    BankDirectotyP.MRTR:
+                                        BankDirectotyP."MRTR Date" := ConvertDate(Attribute.Value);
+                                end;
+                        end;
+                    end; // foreach Attribute in Attributes
+                end; // (Element.Name = 'RstrList')
+            end; // Node.IsXmlElement
+        end; // foreach Node in NodeList
     end;
 
     /// <summary>
@@ -246,5 +351,17 @@ codeunit 50003 "Bic Import"
     begin
         UrlLink := UrlLinkP;
         FullFileName := FullFileNameP; // Need only for WebClient usage type
+    end;
+
+    local procedure ConvertDate(TextDateP: Text) NewDateR: Date
+    var
+        NewDateText: Text;
+    begin
+        NewDateR := 0D;
+        NewDateText := '';
+        if StrLen(TextDateP) = 10 then
+            NewDateText := StrSubstNo('%1.%2.%3', CopyStr(TextDateP, 9, 2), CopyStr(TextDateP, 6, 2), CopyStr(TextDateP, 1, 4));
+        if Evaluate(NewDateR, NewDateText) then;
+        exit(NewDateR);
     end;
 }
