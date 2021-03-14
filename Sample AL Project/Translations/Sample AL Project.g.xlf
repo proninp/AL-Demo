@@ -138,6 +138,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - Method ParseRstrList - NamedType RstrListLabel</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1211854983 - Method 327352061 - NamedType 1925353958" size-unit="char" translate="yes" xml:space="preserve">
+          <source>:AccRstrList</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Bic Import - Method ParseAccRstr - NamedType AccRstrListLabel</note>
+        </trans-unit>
         <trans-unit id="Page 3629594724 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer contacts with orders</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -312,6 +317,66 @@
           <source>Customer Sale Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Blocks - Field Customer Sale Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 303713484 - Field 2250757428 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Active Account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Table Ext - Field ACAC - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 303713484 - Field 2189826774 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Deleted Account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Table Ext - Field ACDL - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 303713484 - Field 1098178941 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Date In</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Table Ext - Field Date In - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 303713484 - Field 462562822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Date Out</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Table Ext - Field Date Out - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 303713484 - Field 3006795188 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Temp. Acc. Saving with Limited Using</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Table Ext - Field LMRS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 303713484 - Field 3968159928 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Temp. Acc. Saving with Limited Using Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Table Ext - Field LMRS Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 303713484 - Field 3372678858 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Urgent Remittance Restriction Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Table Ext - Field URRS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 303713484 - Field 918601286 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Urgent Remittance Restriction Status Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Table Ext - Field URRS Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 303713484 - Field 3848390402 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Account Closing</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Table Ext - Field CLRS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 303713484 - Field 3316688190 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Account Closing Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Table Ext - Field CLRS Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 303713484 - Field 4139419225 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Fast Payments Service Revocation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Table Ext - Field FPRS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 303713484 - Field 1897480013 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1682139193">
+          <source>Fast Payments Service Revocation Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Bank Account Table Ext - Field FPRS Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3204535122 - Field 461174990 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4110144097">
           <source>License Revocation Status</source>

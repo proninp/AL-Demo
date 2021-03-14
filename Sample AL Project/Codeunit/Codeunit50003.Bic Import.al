@@ -49,29 +49,18 @@ codeunit 50003 "Bic Import"
         ResponseOutStream: OutStream;
         TextEntry: Text;
         TextEntryLen: Integer;
-        i: Integer;
-
-        StartTime: DateTime;
-        Dur: Duration;
     begin
         DataCompression.OpenZipArchive(ResponseInStreamP, false);
         DataCompression.GetEntryList(TextEntries);
-        for i := 1 to TextEntries.Count do begin
+        foreach TextEntry in TextEntries do begin
             Clear(TempBlob);
             TempBlob.CreateOutStream(ResponseOutStream, TextEncoding::UTF8);
-            TextEntries.Get(i, TextEntry);
             DataCompression.ExtractEntry(TextEntry, ResponseOutStream, TextEntryLen);
             TempBlob.CreateInStream(ResponseInStreamP, TextEncoding::UTF8);
-            XmlBuffer.Reset();
-            XmlBuffer.DeleteAll();
-
-            StartTime := CurrentDateTime();
-
+            //XmlBuffer.Reset();
+            //XmlBuffer.DeleteAll();
             //XmlBuffer.LoadFromStream(ResponseInStreamP); // This is one of several methods that you can use for parse xml, but it is really slow
             ParseXml(ResponseInStreamP);
-
-            Dur := CurrentDateTime - StartTime;
-            Message(Format(Dur));
         end;
     end;
 
@@ -94,6 +83,7 @@ codeunit 50003 "Bic Import"
             if Attributes.Get(1, Attribute) then
                 ParseBicDirectoty(BankDirectoty, Attribute, Element);
         end;
+        UpdateBankAccountByBankDir();
     end;
 
     local procedure ParseBicDirectoty(var BankDirectotyP: Record "Bank Directory"; var AttributeP: XmlAttribute; var ElementP: XmlElement)
@@ -116,6 +106,9 @@ codeunit 50003 "Bic Import"
             BankDirectotyP.BIC := AttributeP.Value;
             BankDirectotyP.SystemCreatedAt := CurrentDateTime;
             BankDirectotyP.Insert();
+        end else begin
+            Message('Repeat: ' + BankDirectotyP.BIC);
+            exit;
         end;
         if not ElementP.HasElements() then
             exit;
@@ -129,7 +122,6 @@ codeunit 50003 "Bic Import"
                         ParseParticipantInfo(BankDirectotyP, Element);
                     AccountsLabel:
                         ParseAccounts(BankDirectotyP, Element);
-                // TODO something to parse SWBICS information
                 end;
             end;
         end;
@@ -259,11 +251,51 @@ codeunit 50003 "Bic Import"
 
     local procedure ParseAccounts(var BankDirectotyTmpP: Record "Bank Directory" temporary; var ElementP: XmlElement)
     var
+        BankAcc: Record "Bank Account";
         Attributes: XmlAttributeCollection;
         Attribute: XmlAttribute;
+        IsBankAccFound: Boolean;
     begin
-        // TODO something to parse Accounts information
-        // I'm not shure that we really need to do it
+        IsBankAccFound := false;
+        if ElementP.HasAttributes then begin
+            BankAcc.Reset();
+            Attributes := ElementP.Attributes();
+            foreach Attribute in Attributes do begin
+                Case Attribute.Name of
+                    'Account':
+                        begin
+                            BankAcc.SetRange("Bank Account No.", Attribute.Value);
+                            if not BankAcc.FindFirst() then begin
+                                BankAcc.Init();
+                                BankAcc."No." := Attribute.Value;
+                                BankAcc."Bank Account No." := Attribute.Value;
+                                BankAcc.Insert();
+                            end;
+                            IsBankAccFound := true;
+                        end;
+                    'AccountCBRBIC':
+                        BankAcc."Bank BIC" := Attribute.Value;
+                    'DateIn':
+                        BankAcc."Date In" := ConvertDate(Attribute.Value);
+                    'DateOut':
+                        begin
+                            BankAcc."Date Out" := ConvertDate(Attribute.Value);
+                            BankAcc.Blocked := (BankAcc."Date Out" <= Today()) and (not BankAcc.Blocked);
+                        end;
+                    'AccountStatus':
+                        case Attribute.Value of
+                            'ACAC':
+                                BankAcc.ACAC := true;
+                            'ACDL':
+                                BankAcc.ACDL := true;
+                        end;
+                End;
+            end; // Attribute in Attributes
+        end; // ElementP.HasAttributes
+        if ElementP.HasElements then
+            ParseAccRstr(ElementP, BankAcc); // Parse <AccRstrList>
+        if IsBankAccFound then
+            BankAcc.Modify();
     end;
 
     local procedure ParseRstrList(var ElementP: XmlElement; var BankDirectotyP: Record "Bank Directory")
@@ -308,6 +340,112 @@ codeunit 50003 "Bic Import"
                 end; // (Element.Name = 'RstrList')
             end; // Node.IsXmlElement
         end; // foreach Node in NodeList
+    end;
+
+    local procedure ParseAccRstr(var ElementP: XmlElement; var BankAccP: Record "Bank Account")
+    var
+        NodeList: XmlNodeList;
+        Node: XmlNode;
+        Element: XmlElement;
+        Attributes: XmlAttributeCollection;
+        Attribute: XmlAttribute;
+        ElementName: Text;
+        AccRstrListLabel: label ':AccRstrList';
+    begin
+        NodeList := ElementP.GetChildElements();
+        foreach Node in NodeList do begin
+            if Node.IsXmlElement then begin
+                Element := Node.AsXmlElement();
+                ElementName := Element.Name; // For Debug purpose
+                if (Element.Name = AccRstrListLabel) and Element.HasAttributes() then begin
+                    Attributes := Element.Attributes();
+                    foreach Attribute in Attributes do begin
+                        case Attribute.Name of
+                            'AccRstr':
+                                case Attribute.Value of
+                                    'LMRS':
+                                        BankAccP.LMRS := true;
+                                    'URRS':
+                                        BankAccP.URRS := true;
+                                    'CLRS':
+                                        BankAccP.CLRS := true;
+                                    'FPRS':
+                                        BankAccP.FPRS := true;
+                                end;
+                            'AccRstrDate':
+                                case true of
+                                    BankAccP.LMRS:
+                                        BankAccP."LMRS Date" := ConvertDate(Attribute.Value);
+                                    BankAccP.URRS:
+                                        BankAccP."URRS Date" := ConvertDate(Attribute.Value);
+                                    BankAccP.CLRS:
+                                        begin
+                                            BankAccP."CLRS Date" := ConvertDate(Attribute.Value);
+                                            BankAccP.Blocked := (BankAccP."CLRS Date" <= Today()) and (not BankAccP.Blocked);
+                                        end;
+
+                                    BankAccP.FPRS:
+                                        BankAccP."FPRS Date" := ConvertDate(Attribute.Value);
+                                end;
+                        end; // case Attribute.Name
+                    end; // foreach Attribute in Attributes
+                end;
+            end; // Node.IsXmlElement
+        end;
+    end;
+
+    local procedure UpdateBankAccountByBankDir()
+    var
+        BankDirectory: Record "Bank Directory";
+        BankAcc: Record "Bank Account";
+        Name: Text;
+        Name2: Text;
+        Address: Text;
+        Address2: Text;
+    begin
+        BankAcc.Reset();
+        BankDirectory.Reset();
+        if BankDirectory.FindSet() then
+            repeat
+                BankAcc.SetRange("Bank BIC", BankDirectory.BIC);
+                if BankAcc.FindFirst() then begin
+                    Name := '';
+                    Name2 := '';
+                    Address := '';
+                    Address2 := '';
+                    // Update Name
+                    Name := CopyStr(BankDirectory."Full Name", 1, MaxStrLen(BankAcc.Name));
+                    if StrLen(BankDirectory."Full Name") > MaxStrLen(BankAcc.Name) then
+                        Name2 := CopyStr(BankDirectory."Full Name", MaxStrLen(BankAcc.Name), MaxStrLen(BankAcc."Name 2"));
+                    if (Name + Name2) <> (BankAcc.Name + BankAcc."Name 2") then begin
+                        BankAcc.ModifyAll(Name, Name, false);
+                        BankAcc.ModifyAll("Name 2", Name2, false);
+                    end;
+                    // Update Address
+                    Address := CopyStr(BankDirectory.Address, 1, MaxStrLen(BankAcc.Address));
+                    if StrLen(BankDirectory.Address) > MaxStrLen(BankAcc.Address) then
+                        Address2 := CopyStr(BankDirectory.Address, MaxStrLen(BankAcc.Address), MaxStrLen(BankAcc."Address 2"));
+                    if (Address + Address2) <> (BankAcc.Address + BankAcc."Address 2") then begin
+                        BankAcc.ModifyAll(Address, Address, false);
+                        BankAcc.ModifyAll("Address 2", Address2, false);
+                    end;
+                    // Update other information
+                    if BankAcc."Post Code" <> BankDirectory."Post Code" then
+                        BankAcc.ModifyAll("Post Code", CopyStr(BankDirectory."Post Code", 1, MaxStrLen(BankAcc."Post Code")));
+                    if BankAcc."Country/Region Code" <> BankDirectory."Region Code" then
+                        BankAcc.ModifyAll("Country/Region Code", CopyStr(BankDirectory."Region Code", 1, MaxStrLen(BankAcc."Country/Region Code")));
+                    if BankDirectory."Area Type" = BankDirectory."Area Type"::Gorod then
+                        if BankAcc.City <> BankDirectory."Area Name" then
+                            BankAcc.ModifyAll(City, CopyStr(BankDirectory."Area Name", 1, MaxStrLen(BankAcc.City)));
+                    // Check if Blocked
+                    if BankDirectory.LWRS and (BankDirectory."LWRS Date" <= Today()) then
+                        BankAcc.ModifyAll(Blocked, true);
+                    if BankDirectory.PSDL then begin
+                        BankAcc.ModifyAll(Blocked, true);
+                        BankAcc.ModifyAll(ACDL, true);
+                    end;
+                end;
+            until BankDirectory.Next() = 0;
     end;
 
     /// <summary>
