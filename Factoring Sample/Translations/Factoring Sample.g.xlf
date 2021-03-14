@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="Factoring Sample">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 2377686416 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Supply Header</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Header - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2377686416 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Header - Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2377686416 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Header - Field Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2377686416 - Field 1171137197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Header - Field Customer Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2377686416 - Field 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agreement No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Header - Field Agreement No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2377686416 - Field 4044404704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>External Agreement No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Header - Field External Agreement No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2377686416 - Field 1238569201 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Supply Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Header - Field Supply Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2377686416 - Field 1407200743 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creation Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Header - Field Creation Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2377686416 - Field 2256992368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created User ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Header - Field Created User ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2377686416 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Header - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2377686416 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Header - Field No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4088704855 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Supply Line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4088704855 - Field 2811140200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Supply No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Supply No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4088704855 - Field 2401805097 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Supply No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Supply Journal Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4088704855 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Series</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4088704855 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4088704855 - Field 4204687169 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extenal Document No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Extenal Document No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4088704855 - Field 1527594213 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Vendor No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4088704855 - Field 1534621486 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>External Supply Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field External Supply Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4088704855 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4088704855 - Field 2250165551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delay</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Delay - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4088704855 - Field 4029410451 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delay Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Delay Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 54389960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Supply Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 54389960 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Setup - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 54389960 - Field 4077046340 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Supply Journal Nos</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Setup - Field Supply Journal Nos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 54389960 - Field 711990203 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Supply Nos</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Setup - Field Supply Nos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 662484596 - EnumValue 4259830144 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Supply Header Status - EnumValue Open - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 662484596 - EnumValue 2674503554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Close</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Supply Header Status - EnumValue Close - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1026417235 - EnumValue 684573827 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Registration</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Supply Line Status - EnumValue Registration - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1026417235 - EnumValue 443920403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Verification</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Supply Line Status - EnumValue Verification - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1026417235 - EnumValue 1269968483 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Funding</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Supply Line Status - EnumValue Funding - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1026417235 - EnumValue 3346365350 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Supply Line Status - EnumValue Payment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1026417235 - EnumValue 3297489850 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Commission accrual</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Supply Line Status - EnumValue Commission accrual - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1026417235 - EnumValue 841065567 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Comission repayment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Supply Line Status - EnumValue Comission repayment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1026417235 - EnumValue 1483275053 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Closing</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Supply Line Status - EnumValue Closing - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
