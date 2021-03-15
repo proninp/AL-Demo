@@ -15,8 +15,23 @@ codeunit 50100 "Supply Management"
     var
         SupplyLE: Record "Supply Ledger Entry";
     begin
+        if not RunTrigger then
+            exit;
         Rec.TestField(Status, Rec.Status::Registration);
         CreateSupplyLE(SupplyLE, Rec)
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Supply Line", 'OnAfterDeleteEvent', '', false, false)]
+    local procedure OnAfterDeleteSupplyLineEvent(var Rec: Record "Supply Line"; RunTrigger: Boolean)
+    var
+        SupplyLE: Record "Supply Ledger Entry";
+    begin
+        if not RunTrigger then
+            exit;
+        SupplyLE.Reset();
+        SupplyLE.SetCurrentKey("Supply No.");
+        SupplyLE.SetRange("Supply No.", Rec."Supply No.");
+        SupplyLE.DeleteAll(true);
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Supply Line", 'OnAfterValidateEvent', 'Status', true, true)]
