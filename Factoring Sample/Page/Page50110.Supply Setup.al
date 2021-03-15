@@ -20,7 +20,7 @@ page 50110 "Supply Setup"
                     ApplicationArea = Basic, Suite;
                     Caption = 'Supply Journal Nos';
                 }
-                field("Supply Nos"; "Supply Journal Nos")
+                field("Supply Nos"; "Supply Nos")
                 {
                     ApplicationArea = Basic, Suite;
                     Caption = 'Supply Nos';

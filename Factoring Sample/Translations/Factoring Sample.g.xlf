@@ -79,7 +79,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Supply No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4088704855 - Field 2401805097 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Supply No.</source>
+          <source>Supply Journal No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Supply Journal Code - Property Caption</note>
         </trans-unit>
@@ -122,6 +122,11 @@
           <source>Delay Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Delay Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4088704855 - Field 957843354 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Supply Ledger Entry Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Supply Ledger Entry Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 736575182 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Supply Ledger Entry</source>
@@ -212,6 +217,31 @@
           <source>Supply Nos</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Supply Setup - Control Supply Nos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 968661380 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Supply Header Card</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Header Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 968661380 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Process,Report,Approve,Release,Posting,Prepare,Order,Request Approval,History,Print/Send,Navigate</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Header Card - Property PromotedActionCategories</note>
+        </trans-unit>
+        <trans-unit id="Page 626340827 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Supply Subform</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4142303424 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Supply Ledger Entries</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Ledger Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4142303424 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Process,Report,Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Ledger Entries - Property PromotedActionCategories</note>
         </trans-unit>
         <trans-unit id="PageExtension 2081247273 - Control 112251494 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3702551738">
           <source>Funding Percent</source>
