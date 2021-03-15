@@ -89,7 +89,19 @@ table 50100 "Supply Header"
             Caption = 'No. Series';
             DataClassification = ToBeClassified;
         }
-        //TODO FlowFields: Amount, Lines Count
+        field(100; "Lines Amount"; Decimal)
+        {
+            CalcFormula = sum("Supply Line".Amount where("Supply No." = Field("No.")));
+            Caption = 'Lines Amount';
+            FieldClass = FlowField;
+
+        }
+        field(110; "Lines Count"; Integer)
+        {
+            CalcFormula = count("Supply Line" where("Supply No." = Field("No.")));
+            Caption = 'Lines Count';
+            FieldClass = FlowField;
+        }
     }
 
     keys
