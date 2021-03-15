@@ -73,15 +73,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 4088704855 - Field 2811140200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Supply No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Supply No. - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 4088704855 - Field 2401805097 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Supply Journal No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Supply Journal Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4088704855 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4088704855 - Field 2811140200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Supply No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Supply No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4088704855 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Series</source>
@@ -232,6 +237,16 @@
           <source>Supply Subform</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 626340827 - Control 2401805097 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the document number.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Control Supply Journal Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 626340827 - Control 3320823955 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the line number.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Control Line No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 4142303424 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Supply Ledger Entries</source>

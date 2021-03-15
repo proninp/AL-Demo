@@ -91,14 +91,14 @@ table 50100 "Supply Header"
         }
         field(100; "Lines Amount"; Decimal)
         {
-            CalcFormula = sum("Supply Line".Amount where("Supply No." = Field("No.")));
+            CalcFormula = sum("Supply Line".Amount where("Supply Journal Code" = Field("No.")));
             Caption = 'Lines Amount';
             FieldClass = FlowField;
 
         }
         field(110; "Lines Count"; Integer)
         {
-            CalcFormula = count("Supply Line" where("Supply No." = Field("No.")));
+            CalcFormula = count("Supply Line" where("Supply Journal Code" = Field("No.")));
             Caption = 'Lines Count';
             FieldClass = FlowField;
         }

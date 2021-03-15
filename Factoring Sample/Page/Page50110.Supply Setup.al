@@ -1,6 +1,5 @@
 page 50110 "Supply Setup"
 {
-
     ApplicationArea = Basic, Suite;
     Caption = 'Supply Setup';
     DeleteAllowed = false;
@@ -8,7 +7,6 @@ page 50110 "Supply Setup"
     PageType = Card;
     SourceTable = "Supply Setup";
     UsageCategory = Administration;
-
     layout
     {
         area(Content)
