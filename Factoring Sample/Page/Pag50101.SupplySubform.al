@@ -35,6 +35,7 @@ page 50101 "Supply Subform"
                 field(Status; Rec.Status)
                 {
                     ApplicationArea = Basic, Suite;
+                    Editable = false;
                 }
                 field("Extenal Document No."; Rec."Extenal Document No.")
                 {
@@ -49,6 +50,10 @@ page 50101 "Supply Subform"
                     ApplicationArea = Basic, Suite;
                 }
                 field(Amount; Rec.Amount)
+                {
+                    ApplicationArea = Basic, Suite;
+                }
+                field(CreationDate; "Creation Date")
                 {
                     ApplicationArea = Basic, Suite;
                 }
@@ -76,5 +81,56 @@ page 50101 "Supply Subform"
             }
         }
     }
+    actions
+    {
+        area(Processing)
+        {
+            action(Verificate)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Verificate';
+                Enabled = IsVerificateEnable;
+                Image = PostedPayableVoucher;
+                ToolTip = 'Verificate current line';
+
+                trigger OnAction()
+                begin
+                    SupplyMgt.Verificate(Rec);
+                end;
+            }
+            action(VerificateSelected)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Verificate Selected';
+                Enabled = IsVerificateEnable;
+                Image = PostedVoucherGroup;
+                ToolTip = 'Verificate marked lines';
+
+                trigger OnAction()
+                begin
+                    SupplyMgt.VerificateSelected(Rec);
+                    CurrPage.Update();
+                end;
+            }
+        }
+    }
+    trigger OnInsertRecord(BelowxRec: Boolean): Boolean
+    begin
+        IsVerificateEnable := true;
+    end;
+
+    trigger OnDeleteRecord(): Boolean
+    begin
+        IsVerificateEnable := not Rec.IsEmpty;
+    end;
+
+    var
+        IsVerificateEnable: Boolean;
+        SupplyMgt: Codeunit "Supply Management";
+
+    procedure SetVerificateEnable(IsEnableP: Boolean)
+    begin
+        IsVerificateEnable := IsEnableP;
+    end;
 
 }

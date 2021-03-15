@@ -37,7 +37,7 @@ page 50102 "Supply Ledger Entries"
                 {
                     ApplicationArea = Basic, Suite;
                 }
-                field("Creation Date"; Rec."Creation Date")
+                field("Creation Date"; Rec."Creation DateTime")
                 {
                     ApplicationArea = Basic, Suite;
                 }

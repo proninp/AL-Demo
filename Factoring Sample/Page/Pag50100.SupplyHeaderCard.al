@@ -77,8 +77,10 @@ page 50100 "Supply Header Card"
     trigger OnAfterGetCurrRecord()
     begin
         DynamicEditable := CurrPage.Editable;
+        CurrPage.SupplyLines.Page.SetVerificateEnable(SupplyMgt.IsSupplyLineExists(Rec));
     end;
 
     var
+        SupplyMgt: Codeunit "Supply Management";
         DynamicEditable: Boolean;
 }

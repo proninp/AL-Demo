@@ -32,9 +32,9 @@ table 50102 "Supply Ledger Entry"
             Caption = 'Operation Date';
             DataClassification = ToBeClassified;
         }
-        field(50; "Creation Date"; Date)
+        field(50; "Creation DateTime"; DateTime)
         {
-            Caption = 'Cration Date';
+            Caption = 'Cration DateTime';
             DataClassification = ToBeClassified;
         }
         field(60; "Created User ID"; Code[40])

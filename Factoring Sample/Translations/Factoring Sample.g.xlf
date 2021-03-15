@@ -118,6 +118,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Amount - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 4088704855 - Field 1407200743 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creation Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Creation Date - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 4088704855 - Field 2250165551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Delay</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -163,10 +168,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Supply Ledger Entry - Field Operation Date - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 736575182 - Field 1407200743 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cration Date</source>
+        <trans-unit id="Table 736575182 - Field 924930044 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cration DateTime</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Ledger Entry - Field Creation Date - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Ledger Entry - Field Creation DateTime - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 736575182 - Field 2256992368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Created User ID</source>
@@ -223,6 +228,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Supply Setup - Control Supply Nos - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3706235764 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Record is not exists.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType ErrText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3706235764 - NamedType 1460689422" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is no marked lines.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType ErrText002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3706235764 - NamedType 1963392026" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Are you sure that you want verificate record %1?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType ConfirmText001</note>
+        </trans-unit>
         <trans-unit id="Page 968661380 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Supply Header Card</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -247,6 +267,26 @@
           <source>Specifies the line number.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Control Line No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 626340827 - Action 4188302328 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Verificate</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Action Verificate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 626340827 - Action 4188302328 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Verificate current line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Action Verificate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 626340827 - Action 1560346879 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Verificate Selected</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Action VerificateSelected - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 626340827 - Action 1560346879 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Verificate marked lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Action VerificateSelected - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 4142303424 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Supply Ledger Entries</source>

@@ -63,6 +63,11 @@ table 50101 "Supply Line"
             Caption = 'Amount';
             DataClassification = ToBeClassified;
         }
+        field(71; "Creation Date"; Date)
+        {
+            Caption = 'Creation Date';
+            DataClassification = ToBeClassified;
+        }
         field(80; Delay; Integer)
         {
             Caption = 'Delay';
@@ -79,7 +84,6 @@ table 50101 "Supply Line"
             Caption = 'Supply Ledger Entry Amount';
             FieldClass = FlowField;
         }
-
     }
 
     keys
@@ -100,6 +104,7 @@ table 50101 "Supply Line"
         SupplySetup.TestField("Supply Nos");
         if "Supply No." = '' then
             NoSeriesMgt.InitSeries(SupplySetup."Supply Nos", xRec."No. Series", WorkDate(), "Supply No.", "No. Series");
+        "Creation Date" := WorkDate();
     end;
 
     procedure OpenSupplyLedgerEntry()
