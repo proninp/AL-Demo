@@ -15,7 +15,7 @@ table 50102 "Supply Ledger Entry"
         {
             Caption = 'Supply No.';
             DataClassification = ToBeClassified;
-            TableRelation = "Supply Line";
+            TableRelation = "Supply Line" where("Supply No." = field("Supply No."));
         }
         field(20; "Entry Type"; Enum "Supply Line Status")
         {

@@ -5,7 +5,18 @@ table 50101 "Supply Line"
 
     fields
     {
-        field(1; "Supply No."; Code[20])
+        field(1; "Supply Journal Code"; Code[20])
+        {
+            Caption = 'Supply Journal No.';
+            DataClassification = ToBeClassified;
+            TableRelation = "Supply Header";
+        }
+        field(2; "Line No."; Integer)
+        {
+            Caption = 'Line No.';
+            DataClassification = ToBeClassified;
+        }
+        field(10; "Supply No."; Code[20])
         {
             Caption = 'Supply No.';
             DataClassification = ToBeClassified;
@@ -20,12 +31,6 @@ table 50101 "Supply Line"
                     "No. Series" := '';
                 end;
             end;
-        }
-        field(10; "Supply Journal Code"; Code[20])
-        {
-            Caption = 'Supply Journal No.';
-            DataClassification = ToBeClassified;
-            TableRelation = "Supply Header";
         }
         field(20; "No. Series"; Code[20])
         {
@@ -79,10 +84,11 @@ table 50101 "Supply Line"
 
     keys
     {
-        key(PK; "Supply No.")
+        key(Key1; "Supply Journal Code", "Line No.")
         {
             Clustered = true;
         }
+        key(Key2; "Supply No.") { }
     }
 
     trigger OnInsert()
