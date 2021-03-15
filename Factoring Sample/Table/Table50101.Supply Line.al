@@ -23,7 +23,7 @@ table 50101 "Supply Line"
         }
         field(10; "Supply Journal Code"; Code[20])
         {
-            Caption = 'Supply No.';
+            Caption = 'Supply Journal No.';
             DataClassification = ToBeClassified;
             TableRelation = "Supply Header";
         }
@@ -68,7 +68,12 @@ table 50101 "Supply Line"
             Caption = 'Delay Date';
             DataClassification = ToBeClassified;
         }
-        // TODO SLE Amount
+        field(100; "Supply Ledger Entry Amount"; Decimal)
+        {
+            CalcFormula = Sum("Supply Ledger Entry".Amount where("Supply No." = field("Supply No.")));
+            Caption = 'Supply Ledger Entry Amount';
+            FieldClass = FlowField;
+        }
 
     }
 
@@ -91,4 +96,13 @@ table 50101 "Supply Line"
             NoSeriesMgt.InitSeries(SupplySetup."Supply Nos", xRec."No. Series", WorkDate(), "Supply No.", "No. Series");
     end;
 
+    procedure OpenSupplyLedgerEntry()
+    var
+        SupplyLE: Record "Supply Ledger Entry";
+    begin
+        SupplyLE.Reset();
+        SupplyLE.SetCurrentKey("Supply No.");
+        SupplyLE.SetRange("Supply No.", Rec."Supply No.");
+        Page.Run(PAGE::"Supply Ledger Entries", SupplyLE);
+    end;
 }

@@ -2,7 +2,7 @@ pageextension 90010 "Customer Agreement Card Ext" extends "Customer Agreement Ca
 {
     layout
     {
-        addlast(Shipping)
+        addafter(Shipping)
         {
             group(Factoring)
             {

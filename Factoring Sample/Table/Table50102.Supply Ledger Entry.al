@@ -64,9 +64,10 @@ table 50102 "Supply Ledger Entry"
 
     keys
     {
-        key(PK; "Entry No.")
+        key(Key1; "Entry No.")
         {
             Clustered = true;
         }
+        key(Key2; "Supply No.") { }
     }
 }
