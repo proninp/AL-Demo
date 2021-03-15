@@ -5,6 +5,7 @@
       <group id="body">
         <trans-unit id="Table 2377686416 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Supply Header</source>
+          <target>Поставка заголовок</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Supply Header - Property Caption</note>
         </trans-unit>
