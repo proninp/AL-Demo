@@ -79,6 +79,7 @@ page 50101 "Supply Subform"
                 field("Supply Ledger Entry Amount"; Rec."Supply Ledger Entry Amount")
                 {
                     ApplicationArea = Basic, Suite;
+                    Editable = false;
                     trigger OnDrillDown()
                     begin
                         OpenSupplyLedgerEntry();
@@ -101,7 +102,8 @@ page 50101 "Supply Subform"
 
                 trigger OnAction()
                 begin
-                    SupplyMgt.Verificate(Rec);
+                    SupplyMgt.ChangeStatus(Rec, Rec.Status::Verification);
+                    SetControlsEnable();
                 end;
             }
             action(VerificateSelected)
@@ -114,8 +116,34 @@ page 50101 "Supply Subform"
 
                 trigger OnAction()
                 begin
-                    SupplyMgt.VerificateSelected(Rec);
-                    CurrPage.Update();
+                    SupplyMgt.ChangeStatusSelected(Rec, Rec.Status::Verification);
+                    SetControlsEnable();
+                end;
+            }
+            action(Fund)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Fund';
+                Enabled = IsFundingEnable;
+                Image = Cost;
+                ToolTip = 'To Fund current line';
+                trigger OnAction()
+                begin
+                    SupplyMgt.ChangeStatus(Rec, Rec.Status::Funding);
+                    SetControlsEnable();
+                end;
+            }
+            action(FundSelected)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Fund Selected';
+                Enabled = IsFundingEnable;
+                Image = CostCenter;
+                ToolTip = 'To Fund marked lines';
+                trigger OnAction()
+                begin
+                    SupplyMgt.ChangeStatusSelected(Rec, Rec.Status::Funding);
+                    SetControlsEnable();
                 end;
             }
         }
@@ -132,11 +160,27 @@ page 50101 "Supply Subform"
 
     var
         IsVerificateEnable: Boolean;
+        IsFundingEnable: Boolean;
         SupplyMgt: Codeunit "Supply Management";
 
-    procedure SetVerificateEnable(IsEnableP: Boolean)
+    procedure SetControlsEnable(SupplyHeader: Record "Supply Header")
+    var
+        SupplyMgt: Codeunit "Supply Management";
     begin
-        IsVerificateEnable := IsEnableP;
+        IsVerificateEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Registration);
+        IsFundingEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Verification);
+    end;
+
+    procedure SetControlsEnable()
+    var
+        SupplyHeader: Record "Supply Header";
+        SupplyMgt: Codeunit "Supply Management";
+    begin
+        if SupplyHeader.Get(Rec."Supply Journal Code") then begin
+            IsVerificateEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Registration);
+            IsFundingEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Verification);
+        end;
+        CurrPage.Update();
     end;
 
 }

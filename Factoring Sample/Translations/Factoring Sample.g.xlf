@@ -248,10 +248,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType ErrText002</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3706235764 - NamedType 822992805" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is only one record selected - use function for single record.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType ErrText003</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3706235764 - NamedType 1963392026" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Are you sure that you want verificate record %1?</source>
+          <source>Are you sure that you want to verificate record %1?</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType ConfirmText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3706235764 - NamedType 50302175" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Are you sure that you want to fund record %1?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType ConfirmText002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3706235764 - NamedType 687998792" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Are you sure that you want to verificate %1 records?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType ConfirmText003</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3706235764 - NamedType 3876481877" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Are you sure that you want to fund %1 records?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType ConfirmText004</note>
         </trans-unit>
         <trans-unit id="Page 968661380 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Supply Header Card</source>
@@ -297,6 +317,26 @@
           <source>Verificate marked lines</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Action VerificateSelected - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 626340827 - Action 689768979 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fund</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Action Fund - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 626340827 - Action 689768979 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To Fund current line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Action Fund - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 626340827 - Action 2809993292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fund Selected</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Action FundSelected - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 626340827 - Action 2809993292 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To Fund marked lines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Action FundSelected - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 4142303424 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Supply Ledger Entries</source>

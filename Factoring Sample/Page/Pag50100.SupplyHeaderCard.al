@@ -75,11 +75,9 @@ page 50100 "Supply Header Card"
         }
     }
     trigger OnAfterGetCurrRecord()
-    var
-        LineStatus: Enum "Supply Line Status";
     begin
         DynamicEditable := CurrPage.Editable;
-        CurrPage.SupplyLines.Page.SetVerificateEnable(SupplyMgt.IsSupplyLineExists(Rec, LineStatus::Registration));
+        CurrPage.SupplyLines.Page.SetControlsEnable(Rec);
     end;
 
     var

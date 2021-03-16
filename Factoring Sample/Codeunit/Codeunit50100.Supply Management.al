@@ -8,7 +8,12 @@ codeunit 50100 "Supply Management"
     var
         ErrText001: Label 'Record is not exists.';
         ErrText002: Label 'There is no marked lines.';
-        ConfirmText001: Label 'Are you sure that you want verificate record %1?';
+        ErrText003: Label 'There is only one record selected - use function for single record.';
+        ConfirmText001: Label 'Are you sure that you want to verificate record %1?';
+        ConfirmText002: Label 'Are you sure that you want to fund record %1?';
+        ConfirmText003: Label 'Are you sure that you want to verificate %1 records?';
+        ConfirmText004: Label 'Are you sure that you want to fund %1 records?';
+
 
     [EventSubscriber(ObjectType::Table, DATABASE::"Supply Line", 'OnAfterInsertEvent', '', true, true)]
     local procedure OnAfterInsertSupplyLineEvent(var Rec: Record "Supply Line"; RunTrigger: Boolean)
@@ -55,9 +60,9 @@ codeunit 50100 "Supply Management"
         SupplyLEV.Init();
         SupplyLEV."Entry Type" := SupplyLineP.Status;
         SupplyLEV."Supply No." := SupplyLineP."Supply No.";
-        case SupplyLineP.Status of
-            SupplyLineP.Status::Registration:
-                SupplyLEV.Amount := 0;
+        case true of
+            SupplyLineP.Status in [SupplyLineP.Status::Registration, SupplyLineP.Status::Funding]:
+                SupplyLEV.Amount := -SupplyLineP.Amount;
             else
                 SupplyLEV.Amount := SupplyLineP.Amount;
         end;
@@ -71,29 +76,53 @@ codeunit 50100 "Supply Management"
         SupplyLEV.Insert();
     end;
 
-    procedure Verificate(var SupplyLineV: Record "Supply Line")
+    procedure ChangeStatus(var SupplyLineV: Record "Supply Line"; NewStatus: Enum "Supply Line Status")
     var
         SupplyLine: Record "Supply Line";
+        ConfirmText: Text;
     begin
         if not SupplyLine.Get(SupplyLineV."Supply Journal Code", SupplyLineV."Line No.") then
             Error(ErrText001);
-        SupplyLineV.TestField(Status, SupplyLineV.Status::Registration);
-        if not confirm(StrSubstNo(ConfirmText001, SupplyLineV."Supply No.")) then
+        case NewStatus of
+            NewStatus::Verification:
+                begin
+                    SupplyLineV.TestField(Status, SupplyLineV.Status::Registration);
+                    ConfirmText := ConfirmText001;
+                end;
+            NewStatus::Funding:
+                begin
+                    SupplyLineV.TestField(Status, SupplyLineV.Status::Verification);
+                    ConfirmText := ConfirmText002;
+                end;
+        end;
+
+        if not confirm(StrSubstNo(ConfirmText, SupplyLineV."Supply No.")) then
             exit;
-        SupplyLineV.Validate(Status, SupplyLineV.Status::Verification);
+        SupplyLineV.Validate(Status, NewStatus);
     end;
 
-    procedure VerificateSelected(var SupplyLineV: Record "Supply Line")
+    procedure ChangeStatusSelected(var SupplyLineV: Record "Supply Line"; NewStatus: Enum "Supply Line Status")
     var
         SupplyLine: Record "Supply Line";
+        ConfirmText: Text;
     begin
         SupplyLine.Copy(SupplyLineV);
         SupplyLine.MarkedOnly(true);
         if SupplyLine.IsEmpty() then
             Error(ErrText002);
+        if SupplyLineV.Count = 1 then
+            Error(ErrText003);
+        case NewStatus of
+            NewStatus::Verification:
+                ConfirmText := ConfirmText003;
+            NewStatus::Funding:
+                ConfirmText := ConfirmText004;
+        end;
+        if not Confirm(StrSubstNo(ConfirmText, format(SupplyLine.Count))) then
+            exit;
         SupplyLine.FindFirst();
         repeat
-            SupplyLine.Validate(Status, SupplyLine.Status::Verification);
+            SupplyLine.Validate(Status, NewStatus);
             SupplyLine.Modify(true);
         until SupplyLine.Next() = 0;
     end;

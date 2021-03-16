@@ -46,6 +46,8 @@ table 50101 "Supply Line"
                 case Status of
                     Status::Verification:
                         xRec.TestField(Status, xRec.Status::Registration);
+                    Status::Funding:
+                        xRec.TestField(Status, xRec.Status::Verification);
                 end;
             end;
         }

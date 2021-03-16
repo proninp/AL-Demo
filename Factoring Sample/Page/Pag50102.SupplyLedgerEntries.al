@@ -57,6 +57,10 @@ page 50102 "Supply Ledger Entries"
                 {
                     ApplicationArea = Basic, Suite;
                 }
+                field("Vendor Agreement"; "Vendor Agreement")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
             }
         }
     }
