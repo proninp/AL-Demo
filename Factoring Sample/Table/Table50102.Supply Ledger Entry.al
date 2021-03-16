@@ -60,6 +60,12 @@ table 50102 "Supply Ledger Entry"
             DataClassification = ToBeClassified;
             TableRelation = Vendor;
         }
+        field(100; "Vendor Agreement"; Code[20])
+        {
+            Caption = 'Vendor Agreement';
+            DataClassification = ToBeClassified;
+            TableRelation = "Vendor Agreement";
+        }
     }
 
     keys

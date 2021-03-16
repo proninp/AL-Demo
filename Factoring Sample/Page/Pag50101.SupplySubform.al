@@ -45,6 +45,10 @@ page 50101 "Supply Subform"
                 {
                     ApplicationArea = Basic, Suite;
                 }
+                field("Vendor Agreement"; "Vendor Agreement")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
                 field("External Supply Date"; Rec."External Supply Date")
                 {
                     ApplicationArea = Basic, Suite;
@@ -56,6 +60,7 @@ page 50101 "Supply Subform"
                 field(CreationDate; "Creation Date")
                 {
                     ApplicationArea = Basic, Suite;
+                    Visible = false;
                 }
                 field(Delay; Rec.Delay)
                 {
@@ -64,6 +69,7 @@ page 50101 "Supply Subform"
                 field("Delay Date"; Rec."Delay Date")
                 {
                     ApplicationArea = Basic, Suite;
+                    Editable = false;
                 }
                 field("No. Series"; Rec."No. Series")
                 {

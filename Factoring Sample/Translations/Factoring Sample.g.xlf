@@ -138,6 +138,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Supply Ledger Entry Amount - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 4088704855 - Field 1648449478 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Agreement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Vendor Agreement - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 736575182 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Supply Ledger Entry</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -192,6 +197,11 @@
           <source>Vendor No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Supply Ledger Entry - Field Vendor No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 736575182 - Field 1648449478 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor Agreement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Ledger Entry - Field Vendor Agreement - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 54389960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Supply Setup</source>
@@ -308,6 +318,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Agreement Card Ext - Control Margin Fin. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 229190913 - Control 2250165551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3828088610">
+          <source>Delay</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Vendor Agreement Card Ext - Control Delay - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2920870143 - Field 112251494 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2183199486">
           <source>Funding Percent</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -317,6 +332,11 @@
           <source>Margin Fin.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Customer Agreement Ext. - Field Margin Fin. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1648449478 - Field 2250165551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1648449478">
+          <source>Delay</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Vendor Agreement - Field Delay - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 662484596 - EnumValue 4259830144 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Open</source>

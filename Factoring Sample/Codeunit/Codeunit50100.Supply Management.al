@@ -55,13 +55,19 @@ codeunit 50100 "Supply Management"
         SupplyLEV.Init();
         SupplyLEV."Entry Type" := SupplyLineP.Status;
         SupplyLEV."Supply No." := SupplyLineP."Supply No.";
-        SupplyLEV.Amount := SupplyLineP.Amount;
+        case SupplyLineP.Status of
+            SupplyLineP.Status::Registration:
+                SupplyLEV.Amount := 0;
+            else
+                SupplyLEV.Amount := SupplyLineP.Amount;
+        end;
         SupplyLEV."Operation Date" := SupplyLineP."Creation Date";
         SupplyLEV."Creation DateTime" := CurrentDateTime();
         SupplyLEV."Created User ID" := UserId;
         SupplyLEV."Customer No." := SupplyHeader."Customer No.";
         SupplyLEV."Agreement No." := SupplyHeader."Agreement No.";
         SupplyLEV."Vendor No." := SupplyLineP."Vendor No.";
+        SupplyLEV."Vendor Agreement" := SupplyLineP."Vendor Agreement";
         SupplyLEV.Insert();
     end;
 
@@ -92,13 +98,13 @@ codeunit 50100 "Supply Management"
         until SupplyLine.Next() = 0;
     end;
 
-    procedure IsSupplyLineExists(SupplyHeader: Record "Supply Header"): Boolean
+    procedure IsSupplyLineExists(SupplyHeaderP: Record "Supply Header"; StatusP: Enum "Supply Line Status"): Boolean
     var
         SupplyLine: Record "Supply Line";
     begin
         SupplyLine.Reset();
-        SupplyLine.SetRange("Supply Journal Code", SupplyHeader."No.");
+        SupplyLine.SetRange("Supply Journal Code", SupplyHeaderP."No.");
+        SupplyLine.SetRange(Status, StatusP);
         exit(not SupplyLine.IsEmpty);
     end;
-
 }
