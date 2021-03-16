@@ -263,6 +263,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType ErrText005</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3706235764 - NamedType 3204870250" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total sum of payments can not be greater then total sum of fundings for supply %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType ErrText006</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3706235764 - NamedType 1963392026" size-unit="char" translate="yes" xml:space="preserve">
           <source>Are you sure that you want to verificate record %1?</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -384,7 +389,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1650997837 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General</source>
+          <source></source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control General - Property Caption</note>
         </trans-unit>

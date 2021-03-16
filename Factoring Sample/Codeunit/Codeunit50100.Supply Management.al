@@ -11,6 +11,7 @@ codeunit 50100 "Supply Management"
         ErrText003: Label 'There is only one record selected - use function for single record.';
         ErrText004: Label 'Payment date must be greater than supply creation date - %1.';
         ErrText005: Label 'Payment amount must be lower than supply amount - %1.';
+        ErrText006: Label 'Total sum of payments can not be greater then total sum of fundings for supply %1.';
         ConfirmText001: Label 'Are you sure that you want to verificate record %1?';
         ConfirmText002: Label 'Are you sure that you want to fund record %1?';
         ConfirmText003: Label 'Are you sure that you want to verificate %1 records?';
@@ -65,7 +66,7 @@ codeunit 50100 "Supply Management"
         SupplyHeader.Get(SupplyLineP."Supply Journal Code");
         SupplyHeader.TestField("Customer No.");
 
-        SupplyLEV.Init();
+        Clear(SupplyLEV);
         SupplyLEV."Entry Type" := SupplyLineP.Status;
         SupplyLEV."Supply No." := SupplyLineP."Supply No.";
         case true of
@@ -116,13 +117,15 @@ codeunit 50100 "Supply Management"
         SupplyLineV.Validate(Status, NewStatus);
     end;
 
-    procedure CreatePayment(SupplyLineP: Record "Supply Line")
+    procedure CreatePayment(SupplyLineP: Record "Supply Line"; LineStatusP: Enum "Supply Line Status")
     var
         SupplyLE: Record "Supply Ledger Entry";
         Window: Page "Standard Dialog";
         TextValue: Text;
         PaymantDate: Date;
         PaymentAmount: Decimal;
+        FundingAmount: Decimal;
+        TotalPaymentAmount: Decimal;
 
     begin
         if not GuiAllowed then
@@ -132,9 +135,32 @@ codeunit 50100 "Supply Management"
         Window.GetValues(PaymantDate, PaymentAmount);
         if PaymantDate < SupplyLineP."Creation Date" then
             Error(ErrText004, format(SupplyLineP."Creation Date"));
-        if PaymentAmount < SupplyLineP.Amount then
+        if PaymentAmount > abs(SupplyLineP.Amount) then
             Error(ErrText005, format(SupplyLineP.Amount));
-        SupplyLineP.Status := SupplyLineP.Status::Payment;
+
+        SupplyLE.Reset();
+        SupplyLE.SetCurrentKey("Supply No.");
+        SupplyLE.SetRange("Supply No.", SupplyLineP."Supply No.");
+        if LineStatusP = LineStatusP::Payment then begin
+            FundingAmount := 0;
+            TotalPaymentAmount := 0;
+            SupplyLE.SetRange("Entry Type", SupplyLE."Entry Type"::Funding);
+            if SupplyLE.FindFirst() then
+                repeat
+                    FundingAmount += Abs(SupplyLineP.Amount);
+                until SupplyLE.Next() = 0;
+            SupplyLE.SetRange("Entry Type", SupplyLE."Entry Type"::Payment);
+            if SupplyLE.FindFirst() then
+                repeat
+                    TotalPaymentAmount += Abs(SupplyLineP.Amount);
+                until SupplyLE.Next() = 0;
+            TotalPaymentAmount += PaymentAmount;
+            if TotalPaymentAmount > FundingAmount then
+                Error(ErrText006, SupplyLineP."Supply No.");
+        end;
+
+        SupplyLE.Reset();
+        SupplyLineP.Status := LineStatusP;
         SupplyLineP.Amount := PaymentAmount;
         SupplyLineP."Creation Date" := PaymantDate;
         CreateSupplyLE(SupplyLE, SupplyLineP);

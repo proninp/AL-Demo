@@ -103,7 +103,7 @@ page 50101 "Supply Subform"
                 trigger OnAction()
                 begin
                     SupplyMgt.ChangeStatus(Rec, Rec.Status::Verification);
-                    SetControlsEnable();
+                    SetControlsEnable(true);
                 end;
             }
             action(VerificateSelected)
@@ -117,7 +117,7 @@ page 50101 "Supply Subform"
                 trigger OnAction()
                 begin
                     SupplyMgt.ChangeStatusSelected(Rec, Rec.Status::Verification);
-                    SetControlsEnable();
+                    SetControlsEnable(true);
                 end;
             }
             action(Fund)
@@ -130,7 +130,7 @@ page 50101 "Supply Subform"
                 trigger OnAction()
                 begin
                     SupplyMgt.ChangeStatus(Rec, Rec.Status::Funding);
-                    SetControlsEnable();
+                    SetControlsEnable(true);
                 end;
             }
             action(FundSelected)
@@ -143,7 +143,7 @@ page 50101 "Supply Subform"
                 trigger OnAction()
                 begin
                     SupplyMgt.ChangeStatusSelected(Rec, Rec.Status::Funding);
-                    SetControlsEnable();
+                    SetControlsEnable(true);
                 end;
             }
             action(CreatePayment)
@@ -155,20 +155,20 @@ page 50101 "Supply Subform"
                 ToolTip = 'To Create payment on current line';
                 trigger OnAction()
                 begin
-                    SupplyMgt.CreatePayment(Rec);
-                    SetControlsEnable();
+                    SupplyMgt.CreatePayment(Rec, Rec.Status::Payment);
+                    SetControlsEnable(true);
                 end;
             }
         }
     }
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
-        SetControlsEnable();
+        SetControlsEnable(false);
     end;
 
     trigger OnDeleteRecord(): Boolean
     begin
-        SetControlsEnable();
+        SetControlsEnable(false);
     end;
 
     var
@@ -186,7 +186,7 @@ page 50101 "Supply Subform"
         IsCreatePaymentEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Funding);
     end;
 
-    procedure SetControlsEnable()
+    procedure SetControlsEnable(IsUpdate: Boolean)
     var
         SupplyHeader: Record "Supply Header";
         SupplyMgt: Codeunit "Supply Management";
@@ -196,7 +196,7 @@ page 50101 "Supply Subform"
             IsFundingEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Verification);
             IsCreatePaymentEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Funding);
         end;
-        CurrPage.Update();
+        CurrPage.Update(IsUpdate);
     end;
 
 }

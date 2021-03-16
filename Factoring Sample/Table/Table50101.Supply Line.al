@@ -171,6 +171,8 @@ table 50101 "Supply Line"
         if "Supply No." = '' then
             NoSeriesMgt.InitSeries(SupplySetup."Supply Nos", xRec."No. Series", WorkDate(), "Supply No.", "No. Series");
         "Creation Date" := WorkDate();
+        if "Delay Date" = 0D then
+            "Delay Date" := CalcDate('<+' + format(Delay) + 'D>', "Creation Date");
     end;
 
     procedure OpenSupplyLedgerEntry()
