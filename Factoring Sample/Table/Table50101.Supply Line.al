@@ -48,6 +48,8 @@ table 50101 "Supply Line"
                         xRec.TestField(Status, xRec.Status::Registration);
                     Status::Funding:
                         xRec.TestField(Status, xRec.Status::Verification);
+                    Status::Payment:
+                        xRec.TestField(Status, xRec.Status::Funding);
                 end;
             end;
         }

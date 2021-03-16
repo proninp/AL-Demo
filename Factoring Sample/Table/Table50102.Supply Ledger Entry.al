@@ -48,7 +48,7 @@ table 50102 "Supply Ledger Entry"
             DataClassification = ToBeClassified;
             TableRelation = Customer;
         }
-        field(80; "Agreement No."; Code[20])
+        field(80; "Customer Agreement No."; Code[20])
         {
             Caption = 'Agreement No.';
             DataClassification = ToBeClassified;

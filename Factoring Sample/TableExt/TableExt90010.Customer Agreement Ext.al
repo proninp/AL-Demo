@@ -6,6 +6,7 @@ tableextension 90010 "Customer Agreement Ext." extends "Customer Agreement"
         {
             Caption = 'Funding Percent';
             DataClassification = ToBeClassified;
+            //InitValue = 100;
         }
         field(50010; "Margin Fin."; Decimal)
         {

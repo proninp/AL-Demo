@@ -49,7 +49,7 @@ page 50102 "Supply Ledger Entries"
                 {
                     ApplicationArea = Basic, Suite;
                 }
-                field("Agreement No."; Rec."Agreement No.")
+                field("Customer Agreement No."; Rec."Customer Agreement No.")
                 {
                     ApplicationArea = Basic, Suite;
                 }

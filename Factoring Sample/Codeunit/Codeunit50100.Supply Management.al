@@ -9,10 +9,15 @@ codeunit 50100 "Supply Management"
         ErrText001: Label 'Record is not exists.';
         ErrText002: Label 'There is no marked lines.';
         ErrText003: Label 'There is only one record selected - use function for single record.';
+        ErrText004: Label 'Payment date must be greater than supply creation date - %1.';
+        ErrText005: Label 'Payment amount must be lower than supply amount - %1.';
         ConfirmText001: Label 'Are you sure that you want to verificate record %1?';
         ConfirmText002: Label 'Are you sure that you want to fund record %1?';
         ConfirmText003: Label 'Are you sure that you want to verificate %1 records?';
         ConfirmText004: Label 'Are you sure that you want to fund %1 records?';
+        Text001: Label 'Enter paymant date';
+        Text002: Label 'Enter payment amount';
+
 
 
     [EventSubscriber(ObjectType::Table, DATABASE::"Supply Line", 'OnAfterInsertEvent', '', true, true)]
@@ -40,19 +45,22 @@ codeunit 50100 "Supply Management"
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Supply Line", 'OnAfterValidateEvent', 'Status', true, true)]
-    local procedure MyProcedure(var Rec: Record "Supply Line"; var xRec: Record "Supply Line"; CurrFieldNo: Integer)
+    local procedure OnAfterValidateSupplyLineStatusEvent(var Rec: Record "Supply Line"; var xRec: Record "Supply Line"; CurrFieldNo: Integer)
     var
         SupplyLine: Record "Supply Line";
         SupplyLE: Record "Supply Ledger Entry";
     begin
         if not SupplyLine.Get(Rec."Supply Journal Code", Rec."Line No.") then
             exit;
-        CreateSupplyLE(SupplyLE, Rec);
+        if Rec.Status <> Rec.Status::Payment then
+            CreateSupplyLE(SupplyLE, Rec);
     end;
 
     local procedure CreateSupplyLE(var SupplyLEV: Record "Supply Ledger Entry"; SupplyLineP: Record "Supply Line")
     var
+        CustomerAgreement: Record "Customer Agreement";
         SupplyHeader: Record "Supply Header";
+        FundingPercent: Decimal;
     begin
         SupplyHeader.Get(SupplyLineP."Supply Journal Code");
         SupplyHeader.TestField("Customer No.");
@@ -61,8 +69,15 @@ codeunit 50100 "Supply Management"
         SupplyLEV."Entry Type" := SupplyLineP.Status;
         SupplyLEV."Supply No." := SupplyLineP."Supply No.";
         case true of
-            SupplyLineP.Status in [SupplyLineP.Status::Registration, SupplyLineP.Status::Funding]:
+            SupplyLineP.Status in [SupplyLineP.Status::Registration]:
                 SupplyLEV.Amount := -SupplyLineP.Amount;
+            SupplyLineP.Status in [SupplyLineP.Status::Funding]:
+                begin
+                    FundingPercent := 100; // Default
+                    if CustomerAgreement.Get(SupplyLEV."Customer No.", SupplyLEV."Customer Agreement No.") then
+                        FundingPercent := CustomerAgreement."Funding Percent";
+                    SupplyLEV.Amount := -SupplyLineP.Amount * FundingPercent / 100;
+                end;
             else
                 SupplyLEV.Amount := SupplyLineP.Amount;
         end;
@@ -70,7 +85,7 @@ codeunit 50100 "Supply Management"
         SupplyLEV."Creation DateTime" := CurrentDateTime();
         SupplyLEV."Created User ID" := UserId;
         SupplyLEV."Customer No." := SupplyHeader."Customer No.";
-        SupplyLEV."Agreement No." := SupplyHeader."Agreement No.";
+        SupplyLEV."Customer Agreement No." := SupplyHeader."Agreement No.";
         SupplyLEV."Vendor No." := SupplyLineP."Vendor No.";
         SupplyLEV."Vendor Agreement" := SupplyLineP."Vendor Agreement";
         SupplyLEV.Insert();
@@ -99,6 +114,30 @@ codeunit 50100 "Supply Management"
         if not confirm(StrSubstNo(ConfirmText, SupplyLineV."Supply No.")) then
             exit;
         SupplyLineV.Validate(Status, NewStatus);
+    end;
+
+    procedure CreatePayment(SupplyLineP: Record "Supply Line")
+    var
+        SupplyLE: Record "Supply Ledger Entry";
+        Window: Page "Standard Dialog";
+        TextValue: Text;
+        PaymantDate: Date;
+        PaymentAmount: Decimal;
+
+    begin
+        if not GuiAllowed then
+            exit;
+
+        Window.RunModal();
+        Window.GetValues(PaymantDate, PaymentAmount);
+        if PaymantDate < SupplyLineP."Creation Date" then
+            Error(ErrText004, format(SupplyLineP."Creation Date"));
+        if PaymentAmount < SupplyLineP.Amount then
+            Error(ErrText005, format(SupplyLineP.Amount));
+        SupplyLineP.Status := SupplyLineP.Status::Payment;
+        SupplyLineP.Amount := PaymentAmount;
+        SupplyLineP."Creation Date" := PaymantDate;
+        CreateSupplyLE(SupplyLE, SupplyLineP);
     end;
 
     procedure ChangeStatusSelected(var SupplyLineV: Record "Supply Line"; NewStatus: Enum "Supply Line Status")

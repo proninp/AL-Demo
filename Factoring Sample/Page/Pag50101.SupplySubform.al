@@ -146,21 +146,35 @@ page 50101 "Supply Subform"
                     SetControlsEnable();
                 end;
             }
+            action(CreatePayment)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Create Payment';
+                Enabled = IsCreatePaymentEnable;
+                Image = VendorPayment;
+                ToolTip = 'To Create payment on current line';
+                trigger OnAction()
+                begin
+                    SupplyMgt.CreatePayment(Rec);
+                    SetControlsEnable();
+                end;
+            }
         }
     }
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
-        IsVerificateEnable := true;
+        SetControlsEnable();
     end;
 
     trigger OnDeleteRecord(): Boolean
     begin
-        IsVerificateEnable := not Rec.IsEmpty;
+        SetControlsEnable();
     end;
 
     var
         IsVerificateEnable: Boolean;
         IsFundingEnable: Boolean;
+        IsCreatePaymentEnable: Boolean;
         SupplyMgt: Codeunit "Supply Management";
 
     procedure SetControlsEnable(SupplyHeader: Record "Supply Header")
@@ -169,6 +183,7 @@ page 50101 "Supply Subform"
     begin
         IsVerificateEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Registration);
         IsFundingEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Verification);
+        IsCreatePaymentEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Funding);
     end;
 
     procedure SetControlsEnable()
@@ -179,6 +194,7 @@ page 50101 "Supply Subform"
         if SupplyHeader.Get(Rec."Supply Journal Code") then begin
             IsVerificateEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Registration);
             IsFundingEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Verification);
+            IsCreatePaymentEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Funding);
         end;
         CurrPage.Update();
     end;
