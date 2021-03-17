@@ -43,7 +43,7 @@ table 50100 "Supply Header"
             Caption = 'Customer Name';
             DataClassification = ToBeClassified;
         }
-        field(30; "Agreement No."; Code[20])
+        field(30; "Customer Agreement No."; Code[20])
         {
             Caption = 'Agreement No.';
             DataClassification = ToBeClassified;
@@ -52,10 +52,10 @@ table 50100 "Supply Header"
             var
                 CustAgreement: Record "Customer Agreement";
             begin
-                if "Agreement No." = '' then
+                if "Customer Agreement No." = '' then
                     "External Agreement No." := ''
                 else
-                    if CustAgreement.Get("Agreement No.") then
+                    if CustAgreement.Get("Customer Agreement No.") then
                         "External Agreement No." := CustAgreement."External Agreement No.";
             end;
         }

@@ -77,7 +77,7 @@ table 50101 "Supply Line"
                 VendorAgreement.SetRange("Starting Date", 0D, WorkDate());
                 VendorAgreement.SetFilter("Expire Date", '>%1', WorkDate());
                 If VendorAgreement.FindFirst() and (VendorAgreement.Count = 1) then
-                    Validate("Vendor Agreement", VendorAgreement."No.");
+                    Validate("Vendor Agreement No.", VendorAgreement."No.");
             end;
         }
         field(60;
@@ -129,7 +129,7 @@ table 50101 "Supply Line"
             Caption = 'Supply Ledger Entry Amount';
             FieldClass = FlowField;
         }
-        field(110; "Vendor Agreement"; Code[20])
+        field(110; "Vendor Agreement No."; Code[20])
         {
             Caption = 'Vendor Agreement';
             DataClassification = ToBeClassified;
@@ -138,7 +138,7 @@ table 50101 "Supply Line"
             var
                 VendorAgreement: Record "Vendor Agreement";
             begin
-                if VendorAgreement.Get("Vendor No.", "Vendor Agreement") and ("Vendor Agreement" <> '') then
+                if VendorAgreement.Get("Vendor No.", "Vendor Agreement No.") and ("Vendor Agreement No." <> '') then
                     Delay := VendorAgreement.Delay
                 else
                     Delay := 0;
@@ -171,6 +171,8 @@ table 50101 "Supply Line"
         if "Supply No." = '' then
             NoSeriesMgt.InitSeries(SupplySetup."Supply Nos", xRec."No. Series", WorkDate(), "Supply No.", "No. Series");
         "Creation Date" := WorkDate();
+        if "External Supply Date" = 0D then
+            "External Supply Date" := "Creation Date";
         if "Delay Date" = 0D then
             "Delay Date" := CalcDate('<+' + format(Delay) + 'D>', "Creation Date");
     end;

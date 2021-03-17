@@ -10,59 +10,94 @@ page 60000 "Standard Dialog"
             group(General)
             {
                 Caption = '';
-                field(CreationDate; CreationDate)
+                field(PaymentDate; PaymentCreationDate)
                 {
                     ApplicationArea = Basic, Suite;
-                    Caption = 'Creation Date';
+                    Caption = 'Payment Creation Date';
                     ToolTip = 'Specifies the creation date.';
+                    Visible = IsPaymentControlsVisible;
                 }
-                field(Amount; Amount)
+                field(PaymentAmount; PaymentAmount)
                 {
                     ApplicationArea = Basic, Suite;
-                    Caption = 'Amount';
+                    Caption = 'Payment Amount';
                     ToolTip = 'Specifies the payment amount.';
+                    Visible = IsPaymentControlsVisible;
+                }
+                field(ComissionStartDate; ComissionStartDate)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Comisssion Start Date';
+                    ToolTip = 'Specifies comission start date.';
+                    Visible = IsCommissionControlsVisible;
+                    trigger OnValidate()
+                    begin
+                        CheckComissionDates();
+                    end;
+                }
+                field(ComissionEndDate; ComissionEndDate)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Comission End Date';
+                    ToolTip = 'Specifies comission end date.';
+                    Visible = IsCommissionControlsVisible;
+                    trigger OnValidate()
+                    begin
+                        CheckComissionDates();
+                    end;
                 }
             }
         }
     }
-
-    actions
-    {
-    }
-
     var
-        Amount: Decimal;
-        CreationDate: Date;
+        PaymentAmount: Decimal;
+        PaymentCreationDate: Date;
+        ComissionStartDate: Date;
+        ComissionEndDate: Date;
+        IsPaymentControlsVisible: Boolean;
+        IsCommissionControlsVisible: Boolean;
+        ErrText001: Label 'Start date must be earlier then End date.';
 
-    procedure SetValues(NewCreationDate: Date; NewAmount: Decimal)
-    var
-        IsHandled: Boolean;
+    procedure SetPaymentValues(NewCreationDate: Date; NewAmount: Decimal)
     begin
-        IsHandled := false;
-        OnBeforeSetValues(NewCreationDate, NewAmount, IsHandled);
-        if IsHandled then
-            exit;
-
-        CreationDate := NewCreationDate;
-        Amount := NewAmount;
+        PaymentCreationDate := NewCreationDate;
+        PaymentAmount := NewAmount;
     end;
 
-    procedure GetValues(var NewCreationDate: Date; var NewAmount: Decimal)
+    procedure GetPaymentValues(var NewCreationDate: Date; var NewAmount: Decimal)
     begin
-        OnBeforeGetValues(NewCreationDate, NewAmount);
-
-        NewCreationDate := CreationDate;
-        NewAmount := Amount;
+        NewCreationDate := PaymentCreationDate;
+        NewAmount := PaymentAmount;
     end;
 
-    [IntegrationEvent(true, false)]
-    local procedure OnBeforeSetValues(var NewCreationDate: Date; var NewAmount: Decimal; var IsHandled: Boolean)
+    procedure SetComissionValues(NewComissionStartDate: Date; NewComissionEndDate: Date)
     begin
+        ComissionStartDate := NewComissionStartDate;
+        ComissionEndDate := NewComissionEndDate;
     end;
 
-    [IntegrationEvent(true, false)]
-    local procedure OnBeforeGetValues(var NewCreationDate: Date; var NewAmount: Decimal)
+    procedure GetComissionValues(var NewComissionStartDate: Date; var NewComissionEndDate: Date)
     begin
+
+        NewComissionStartDate := ComissionStartDate;
+        NewComissionEndDate := ComissionEndDate;
+    end;
+
+    procedure SetPaymentVisible(IsVisibleP: Boolean)
+    begin
+        IsPaymentControlsVisible := IsVisibleP;
+    end;
+
+    procedure SetComissionVisible(IsVisibleP: Boolean)
+    begin
+        IsCommissionControlsVisible := IsVisibleP;
+    end;
+
+    local procedure CheckComissionDates()
+    begin
+        if (ComissionStartDate <> 0D) and (ComissionEndDate <> 0D) then
+            if ComissionStartDate > ComissionEndDate then
+                Error(ErrText001);
     end;
 }
 

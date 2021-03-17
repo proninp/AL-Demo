@@ -23,10 +23,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Supply Header - Field Customer Name - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2377686416 - Field 4256180955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2377686416 - Field 624662543 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Agreement No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Header - Field Agreement No. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Header - Field Customer Agreement No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2377686416 - Field 4044404704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>External Agreement No.</source>
@@ -138,10 +138,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Supply Ledger Entry Amount - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 4088704855 - Field 1648449478 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 4088704855 - Field 33916103 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor Agreement</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Vendor Agreement - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Supply Line - Field Vendor Agreement No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 736575182 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Supply Ledger Entry</source>
@@ -268,6 +268,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType ErrText006</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3706235764 - NamedType 2567173633" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment amount must be greater than 0.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType ErrText007</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3706235764 - NamedType 1963392026" size-unit="char" translate="yes" xml:space="preserve">
           <source>Are you sure that you want to verificate record %1?</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -297,6 +302,11 @@
           <source>Enter payment amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3706235764 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is no amount of outstanding debt for the period from %1 to %2 fo supply line %3.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType Text003</note>
         </trans-unit>
         <trans-unit id="Page 968661380 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Supply Header Card</source>
@@ -373,6 +383,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Action CreatePayment - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 626340827 - Action 3232429624 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Comission</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Action CreateComission - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 626340827 - Action 3232429624 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To Create comission on current line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Subform - Action CreateComission - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 4142303424 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Supply Ledger Entries</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -393,25 +413,50 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control General - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1650997837 - Control 3152393767 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Creation Date</source>
+        <trans-unit id="Page 1650997837 - Control 4250709058 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Creation Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control CreationDate - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control PaymentDate - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1650997837 - Control 3152393767 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 1650997837 - Control 4250709058 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the creation date.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control CreationDate - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control PaymentDate - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1650997837 - Control 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Amount</source>
+        <trans-unit id="Page 1650997837 - Control 1880071162 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control Amount - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control PaymentAmount - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1650997837 - Control 636392376 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 1650997837 - Control 1880071162 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the payment amount.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control Amount - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control PaymentAmount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1650997837 - Control 3290610272 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Comisssion Start Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control ComissionStartDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1650997837 - Control 3290610272 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies comission start date.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control ComissionStartDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1650997837 - Control 1356309877 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Comission End Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control ComissionEndDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1650997837 - Control 1356309877 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies comission end date.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control ComissionEndDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1650997837 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start date must be earlier then End date.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - NamedType ErrText001</note>
         </trans-unit>
         <trans-unit id="PageExtension 2081247273 - Control 112251494 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3702551738">
           <source>Funding Percent</source>

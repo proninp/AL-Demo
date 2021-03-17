@@ -12,12 +12,14 @@ codeunit 50100 "Supply Management"
         ErrText004: Label 'Payment date must be greater than supply creation date - %1.';
         ErrText005: Label 'Payment amount must be lower than supply amount - %1.';
         ErrText006: Label 'Total sum of payments can not be greater then total sum of fundings for supply %1.';
+        ErrText007: Label 'Payment amount must be greater than 0.';
         ConfirmText001: Label 'Are you sure that you want to verificate record %1?';
         ConfirmText002: Label 'Are you sure that you want to fund record %1?';
         ConfirmText003: Label 'Are you sure that you want to verificate %1 records?';
         ConfirmText004: Label 'Are you sure that you want to fund %1 records?';
         Text001: Label 'Enter paymant date';
         Text002: Label 'Enter payment amount';
+        Text003: Label 'There is no amount of outstanding debt for the period from %1 to %2 fo supply line %3.';
 
 
 
@@ -70,7 +72,7 @@ codeunit 50100 "Supply Management"
         SupplyLEV."Entry Type" := SupplyLineP.Status;
         SupplyLEV."Supply No." := SupplyLineP."Supply No.";
         case true of
-            SupplyLineP.Status in [SupplyLineP.Status::Registration]:
+            SupplyLineP.Status in [SupplyLineP.Status::Registration, SupplyLineP.Status::"Commission accrual"]:
                 SupplyLEV.Amount := -SupplyLineP.Amount;
             SupplyLineP.Status in [SupplyLineP.Status::Funding]:
                 begin
@@ -86,9 +88,9 @@ codeunit 50100 "Supply Management"
         SupplyLEV."Creation DateTime" := CurrentDateTime();
         SupplyLEV."Created User ID" := UserId;
         SupplyLEV."Customer No." := SupplyHeader."Customer No.";
-        SupplyLEV."Customer Agreement No." := SupplyHeader."Agreement No.";
+        SupplyLEV."Customer Agreement No." := SupplyHeader."Customer Agreement No.";
         SupplyLEV."Vendor No." := SupplyLineP."Vendor No.";
-        SupplyLEV."Vendor Agreement" := SupplyLineP."Vendor Agreement";
+        SupplyLEV."Vendor Agreement" := SupplyLineP."Vendor Agreement No.";
         SupplyLEV.Insert();
     end;
 
@@ -121,7 +123,6 @@ codeunit 50100 "Supply Management"
     var
         SupplyLE: Record "Supply Ledger Entry";
         Window: Page "Standard Dialog";
-        TextValue: Text;
         PaymantDate: Date;
         PaymentAmount: Decimal;
         FundingAmount: Decimal;
@@ -131,29 +132,31 @@ codeunit 50100 "Supply Management"
         if not GuiAllowed then
             exit;
 
-        Window.RunModal();
-        Window.GetValues(PaymantDate, PaymentAmount);
+        Window.SetPaymentVisible(true);
+        if not (Window.RunModal() in [Action::LookupOK, Action::OK]) then
+            Error('');
+        Window.GetPaymentValues(PaymantDate, PaymentAmount);
         if PaymantDate < SupplyLineP."Creation Date" then
             Error(ErrText004, format(SupplyLineP."Creation Date"));
         if PaymentAmount > abs(SupplyLineP.Amount) then
             Error(ErrText005, format(SupplyLineP.Amount));
+        if PaymentAmount <= 0 then
+            Error(ErrText007);
 
         SupplyLE.Reset();
-        SupplyLE.SetCurrentKey("Supply No.");
+        SupplyLE.SetCurrentKey("Supply No.", "Entry Type", "Operation Date");
         SupplyLE.SetRange("Supply No.", SupplyLineP."Supply No.");
         if LineStatusP = LineStatusP::Payment then begin
             FundingAmount := 0;
             TotalPaymentAmount := 0;
+
             SupplyLE.SetRange("Entry Type", SupplyLE."Entry Type"::Funding);
-            if SupplyLE.FindFirst() then
-                repeat
-                    FundingAmount += Abs(SupplyLineP.Amount);
-                until SupplyLE.Next() = 0;
+            SupplyLE.CalcSums(Amount);
+            FundingAmount := Abs(SupplyLE.Amount);
+
             SupplyLE.SetRange("Entry Type", SupplyLE."Entry Type"::Payment);
-            if SupplyLE.FindFirst() then
-                repeat
-                    TotalPaymentAmount += Abs(SupplyLineP.Amount);
-                until SupplyLE.Next() = 0;
+            SupplyLE.CalcSums(Amount);
+            TotalPaymentAmount := SupplyLE.Amount;
             TotalPaymentAmount += PaymentAmount;
             if TotalPaymentAmount > FundingAmount then
                 Error(ErrText006, SupplyLineP."Supply No.");
@@ -164,6 +167,82 @@ codeunit 50100 "Supply Management"
         SupplyLineP.Amount := PaymentAmount;
         SupplyLineP."Creation Date" := PaymantDate;
         CreateSupplyLE(SupplyLE, SupplyLineP);
+    end;
+
+    procedure ComissionManualCreationOnPeriod(SupplyLineP: Record "Supply Line")
+    var
+        CustomerAgreement: Record "Customer Agreement";
+
+        Window: Page "Standard Dialog";
+        ComissionStartDate: Date;
+        ComissionEndDate: Date;
+        ComissionAmount: Decimal;
+    begin
+        CheckSupplyBeforeComissionFee(SupplyLineP, CustomerAgreement);
+
+        Window.SetComissionVisible(true);
+        if not (Window.RunModal() in [Action::LookupOK, Action::OK]) then
+            Error('');
+        Window.GetComissionValues(ComissionStartDate, ComissionEndDate);
+        CalculateComissionOnPeriod(SupplyLineP, CustomerAgreement."Margin Fin.", ComissionStartDate, ComissionEndDate);
+    end;
+
+    local procedure CheckSupplyBeforeComissionFee(SupplyLineP: Record "Supply Line"; var CustomerAgreementV: Record "Customer Agreement")
+    var
+        SupplyHeader: Record "Supply Header";
+    begin
+        SupplyHeader.Get(SupplyLineP."Supply Journal Code");
+        SupplyHeader.TestField("Customer No.");
+        SupplyHeader.TestField("Customer Agreement No.");
+        CustomerAgreementV.Get(SupplyHeader."Customer No.", SupplyHeader."Customer Agreement No.");
+        CustomerAgreementV.TestField("Margin Fin.");
+    end;
+
+    local procedure CalculateComissionOnPeriod(SupplyLineP: Record "Supply Line"; MarginPercent: Decimal; StartDate: Date; EndDate: Date)
+    var
+        SupplyLE: Record "Supply Ledger Entry";
+        SupplyLENew: Record "Supply Ledger Entry";
+        SupplyLEFund: Record "Supply Ledger Entry";
+        DateTable: Record Date;
+        ComissionAmount: Decimal;
+        DaysInYearCount: Integer;
+    begin
+        SupplyLineP.Get(SupplyLineP."Supply Journal Code", SupplyLineP."Line No.");
+
+        SupplyLE.Reset();
+        SupplyLE.SetCurrentKey("Supply No.", "Entry Type", "Operation Date");
+        SupplyLE.SetRange("Supply No.", SupplyLineP."Supply No.");
+        SupplyLE.SetFilter("Entry Type", '%1|%2', SupplyLineP.Status::Funding, SupplyLineP.Status::Payment);
+
+        DaysInYearCount := GetdaysInYearCount();
+
+        DateTable.Reset;
+        DateTable.SetRange("Period Start", StartDate);
+        DateTable.SetRange("Period End", EndDate);
+        if not DateTable.FindSet() then
+            exit;
+        repeat
+            SupplyLE.SetRange("Operation Date", StartDate, DateTable."Period Start");
+            SupplyLE.CalcSums(Amount);
+            ComissionAmount := SupplyLE.Amount * MarginPercent / 100 / DaysInYearCount;
+            if ComissionAmount > 0 then begin
+                SupplyLineP."Creation Date" := DateTable."Period Start";
+                SupplyLineP.Status := SupplyLineP.Status::"Commission accrual";
+                SupplyLineP.Amount := ComissionAmount;
+                CreateSupplyLE(SupplyLENew, SupplyLineP);
+            end;
+        until DateTable.Next() = 0;
+        SupplyLineP.Get(SupplyLineP."Supply Journal Code", SupplyLineP."Line No.");
+    end;
+
+    local procedure GetdaysInYearCount(): Integer
+    var
+        DateTable: Record Date;
+    begin
+        DateTable.Reset;
+        DateTable.SetRange("Period Start", DMY2Date(1, 1, Date2DMY(Today(), 3)));
+        DateTable.SetRange("Period End", DMY2Date(31, 12, Date2DMY(Today(), 3)));
+        Exit(DateTable.Count);
     end;
 
     procedure ChangeStatusSelected(var SupplyLineV: Record "Supply Line"; NewStatus: Enum "Supply Line Status")

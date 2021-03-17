@@ -36,7 +36,7 @@ page 50100 "Supply Header Card"
                 {
                     ApplicationArea = Basic, Suite;
                 }
-                field("Agreement No."; Rec."Agreement No.")
+                field("Agreement No."; Rec."Customer Agreement No.")
                 {
                     ApplicationArea = Basic, Suite;
                 }

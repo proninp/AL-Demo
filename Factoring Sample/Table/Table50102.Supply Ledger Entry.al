@@ -75,5 +75,9 @@ table 50102 "Supply Ledger Entry"
             Clustered = true;
         }
         key(Key2; "Supply No.") { }
+        key(key3; "Supply No.", "Entry Type", "Operation Date")
+        {
+            SumIndexFields = Amount;
+        }
     }
 }

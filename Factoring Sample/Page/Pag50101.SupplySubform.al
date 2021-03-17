@@ -45,7 +45,7 @@ page 50101 "Supply Subform"
                 {
                     ApplicationArea = Basic, Suite;
                 }
-                field("Vendor Agreement"; "Vendor Agreement")
+                field("Vendor Agreement"; "Vendor Agreement No.")
                 {
                     ApplicationArea = Basic, Suite;
                 }
@@ -159,6 +159,19 @@ page 50101 "Supply Subform"
                     SetControlsEnable(true);
                 end;
             }
+            action(CreateComission)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Create Comission';
+                Enabled = IsCreateComissionEditable;
+                Image = Currency;
+                ToolTip = 'To Create comission on current line';
+                trigger OnAction()
+                begin
+                    SupplyMgt.ComissionManualCreationOnPeriod(Rec);
+                    SetControlsEnable(true);
+                end;
+            }
         }
     }
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
@@ -175,6 +188,7 @@ page 50101 "Supply Subform"
         IsVerificateEnable: Boolean;
         IsFundingEnable: Boolean;
         IsCreatePaymentEnable: Boolean;
+        IsCreateComissionEditable: Boolean;
         SupplyMgt: Codeunit "Supply Management";
 
     procedure SetControlsEnable(SupplyHeader: Record "Supply Header")
@@ -184,6 +198,7 @@ page 50101 "Supply Subform"
         IsVerificateEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Registration);
         IsFundingEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Verification);
         IsCreatePaymentEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Funding);
+        IsCreateComissionEditable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Payment);
     end;
 
     procedure SetControlsEnable(IsUpdate: Boolean)
@@ -195,6 +210,7 @@ page 50101 "Supply Subform"
             IsVerificateEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Registration);
             IsFundingEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Verification);
             IsCreatePaymentEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Funding);
+            IsCreateComissionEditable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Payment);
         end;
         CurrPage.Update(IsUpdate);
     end;
