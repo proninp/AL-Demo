@@ -293,6 +293,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType ConfirmText004</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3706235764 - NamedType 219211198" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The system already has commission accrual records for supply %1 on the date %2. Existing records will be deleted. Continue?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Supply Management - NamedType ConfirmText005</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3706235764 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>Enter paymant date</source>
           <note from="Developer" annotates="general" priority="2"></note>

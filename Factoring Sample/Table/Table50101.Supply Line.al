@@ -74,8 +74,6 @@ table 50101 "Supply Line"
                 VendorAgreement.Reset();
                 VendorAgreement.SetRange("Vendor No.", Rec."Vendor No.");
                 VendorAgreement.SetFilter(Blocked, '<>%1', VendorAgreement.Blocked::All);
-                VendorAgreement.SetRange("Starting Date", 0D, WorkDate());
-                VendorAgreement.SetFilter("Expire Date", '>%1', WorkDate());
                 If VendorAgreement.FindFirst() and (VendorAgreement.Count = 1) then
                     Validate("Vendor Agreement No.", VendorAgreement."No.");
             end;
@@ -133,7 +131,7 @@ table 50101 "Supply Line"
         {
             Caption = 'Vendor Agreement';
             DataClassification = ToBeClassified;
-            TableRelation = "Vendor Agreement";
+            TableRelation = "Vendor Agreement"."No.";
             trigger OnValidate()
             var
                 VendorAgreement: Record "Vendor Agreement";

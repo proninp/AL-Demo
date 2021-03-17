@@ -47,7 +47,7 @@ table 50100 "Supply Header"
         {
             Caption = 'Agreement No.';
             DataClassification = ToBeClassified;
-            TableRelation = "Customer Agreement" where(Blocked = filter(<> 3));
+            TableRelation = "Customer Agreement"."No." where(Blocked = filter(<> 3));
             trigger OnValidate()
             var
                 CustAgreement: Record "Customer Agreement";

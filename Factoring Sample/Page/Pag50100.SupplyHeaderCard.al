@@ -5,7 +5,7 @@ page 50100 "Supply Header Card"
     PromotedActionCategories = 'New,Process,Report,Approve,Release,Posting,Prepare,Order,Request Approval,History,Print/Send,Navigate';
     RefreshOnActivate = true;
     SourceTable = "Supply Header";
-
+    UsageCategory = Documents;
     layout
     {
         area(content)
@@ -58,10 +58,12 @@ page 50100 "Supply Header Card"
                 field("Lines Amount"; Rec."Lines Amount")
                 {
                     ApplicationArea = Basic, Suite;
+                    Editable = false;
                 }
                 field("Lines Count"; Rec."Lines Count")
                 {
                     ApplicationArea = Basic, Suite;
+                    Editable = false;
                 }
             }
             part(SupplyLines; "Supply Subform")
@@ -77,7 +79,6 @@ page 50100 "Supply Header Card"
     trigger OnAfterGetCurrRecord()
     begin
         DynamicEditable := CurrPage.Editable;
-        CurrPage.SupplyLines.Page.SetControlsEnable(Rec);
     end;
 
     var

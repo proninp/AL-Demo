@@ -101,9 +101,10 @@ page 50101 "Supply Subform"
                 ToolTip = 'Verificate current line';
 
                 trigger OnAction()
+                var
+                    SupplyMgt: Codeunit "Supply Management";
                 begin
                     SupplyMgt.ChangeStatus(Rec, Rec.Status::Verification);
-                    SetControlsEnable(true);
                 end;
             }
             action(VerificateSelected)
@@ -115,9 +116,10 @@ page 50101 "Supply Subform"
                 ToolTip = 'Verificate marked lines';
 
                 trigger OnAction()
+                var
+                    SupplyMgt: Codeunit "Supply Management";
                 begin
                     SupplyMgt.ChangeStatusSelected(Rec, Rec.Status::Verification);
-                    SetControlsEnable(true);
                 end;
             }
             action(Fund)
@@ -128,9 +130,10 @@ page 50101 "Supply Subform"
                 Image = Cost;
                 ToolTip = 'To Fund current line';
                 trigger OnAction()
+                var
+                    SupplyMgt: Codeunit "Supply Management";
                 begin
                     SupplyMgt.ChangeStatus(Rec, Rec.Status::Funding);
-                    SetControlsEnable(true);
                 end;
             }
             action(FundSelected)
@@ -141,22 +144,24 @@ page 50101 "Supply Subform"
                 Image = CostCenter;
                 ToolTip = 'To Fund marked lines';
                 trigger OnAction()
+                var
+                    SupplyMgt: Codeunit "Supply Management";
                 begin
                     SupplyMgt.ChangeStatusSelected(Rec, Rec.Status::Funding);
-                    SetControlsEnable(true);
                 end;
             }
             action(CreatePayment)
             {
                 ApplicationArea = Basic, Suite;
                 Caption = 'Create Payment';
-                Enabled = IsCreatePaymentEnable;
+                Enabled = IsPaymentEnable;
                 Image = VendorPayment;
                 ToolTip = 'To Create payment on current line';
                 trigger OnAction()
+                var
+                    SupplyMgt: Codeunit "Supply Management";
                 begin
                     SupplyMgt.CreatePayment(Rec, Rec.Status::Payment);
-                    SetControlsEnable(true);
                 end;
             }
             action(CreateComission)
@@ -167,19 +172,15 @@ page 50101 "Supply Subform"
                 Image = Currency;
                 ToolTip = 'To Create comission on current line';
                 trigger OnAction()
+                var
+                    SupplyMgt: Codeunit "Supply Management";
                 begin
                     SupplyMgt.ComissionManualCreationOnPeriod(Rec);
-                    SetControlsEnable(true);
                 end;
             }
         }
     }
-    trigger OnInsertRecord(BelowxRec: Boolean): Boolean
-    begin
-        SetControlsEnable(false);
-    end;
-
-    trigger OnDeleteRecord(): Boolean
+    trigger OnAfterGetCurrRecord()
     begin
         SetControlsEnable(false);
     end;
@@ -187,32 +188,17 @@ page 50101 "Supply Subform"
     var
         IsVerificateEnable: Boolean;
         IsFundingEnable: Boolean;
-        IsCreatePaymentEnable: Boolean;
+        IsPaymentEnable: Boolean;
         IsCreateComissionEditable: Boolean;
-        SupplyMgt: Codeunit "Supply Management";
-
-    procedure SetControlsEnable(SupplyHeader: Record "Supply Header")
-    var
-        SupplyMgt: Codeunit "Supply Management";
-    begin
-        IsVerificateEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Registration);
-        IsFundingEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Verification);
-        IsCreatePaymentEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Funding);
-        IsCreateComissionEditable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Payment);
-    end;
 
     procedure SetControlsEnable(IsUpdate: Boolean)
     var
-        SupplyHeader: Record "Supply Header";
+        SupplyLine: Record "Supply Line";
         SupplyMgt: Codeunit "Supply Management";
     begin
-        if SupplyHeader.Get(Rec."Supply Journal Code") then begin
-            IsVerificateEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Registration);
-            IsFundingEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Verification);
-            IsCreatePaymentEnable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Funding);
-            IsCreateComissionEditable := SupplyMgt.IsSupplyLineExists(SupplyHeader, Status::Payment);
-        end;
-        CurrPage.Update(IsUpdate);
+        IsVerificateEnable := (Rec.Status = Rec.Status::Registration) and (SupplyLine.Get(Rec."Supply Journal Code", Rec."Line No.")) and CurrPage.Editable;
+        IsFundingEnable := (Rec.Status = Rec.Status::Verification) and CurrPage.Editable;
+        IsPaymentEnable := SupplyMgt.IsPaymentControlEditable(Rec) and CurrPage.Editable;
+        IsCreateComissionEditable := (Rec.Status = Rec.Status::Funding) and CurrPage.Editable;
     end;
-
 }
