@@ -7,9 +7,9 @@ table 50102 "Supply Ledger Entry"
     {
         field(1; "Entry No."; BigInteger)
         {
+            AutoIncrement = true;
             Caption = 'Entry No.';
             DataClassification = ToBeClassified;
-            AutoIncrement = true;
         }
         field(10; "Supply No."; Code[20])
         {

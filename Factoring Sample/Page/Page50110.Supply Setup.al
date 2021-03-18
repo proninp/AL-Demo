@@ -16,12 +16,10 @@ page 50110 "Supply Setup"
                 field("Supply Journal Nos"; "Supply Journal Nos")
                 {
                     ApplicationArea = Basic, Suite;
-                    Caption = 'Supply Journal Nos';
                 }
                 field("Supply Nos"; "Supply Nos")
                 {
                     ApplicationArea = Basic, Suite;
-                    Caption = 'Supply Nos';
                 }
             }
         }

@@ -31,6 +31,7 @@ page 50100 "Supply Header Card"
                 field("Customer No."; Rec."Customer No.")
                 {
                     ApplicationArea = Basic, Suite;
+                    ShowMandatory = true;
                 }
                 field("Customer Name"; Rec."Customer Name")
                 {
@@ -39,6 +40,7 @@ page 50100 "Supply Header Card"
                 field("Agreement No."; Rec."Customer Agreement No.")
                 {
                     ApplicationArea = Basic, Suite;
+                    ShowMandatory = true;
                 }
                 field("Supply Date"; Rec."Supply Date")
                 {
@@ -73,6 +75,26 @@ page 50100 "Supply Header Card"
                 Enabled = "Customer No." <> '';
                 SubPageLink = "Supply Journal Code" = field("No.");
                 UpdatePropagation = Both;
+            }
+        }
+    }
+    actions
+    {
+        area(Processing)
+        {
+            action(SendRequest)
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Send Dadata Request';
+                Image = LaunchWeb;
+                ToolTip = 'Send Dadata Request';
+
+                trigger OnAction()
+                var
+                    DadataApiMgt: Codeunit "Dadata API Mgt.";
+                begin
+                    DadataApiMgt.Run();
+                end;
             }
         }
     }
