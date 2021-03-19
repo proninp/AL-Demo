@@ -2,7 +2,7 @@ codeunit 50200 "Dadata API Mgt."
 {
     trigger OnRun()
     begin
-        GetCompanyInformation('5045040517', '504501001');
+        GetCompanyInformation('7706677277', '770801001');
     end;
 
     var
@@ -40,6 +40,7 @@ codeunit 50200 "Dadata API Mgt."
         Uri: Text;
         BodyText: Text;
         TokenText: Text;
+        FileMgt: Codeunit "File Management";
     begin
         DadataSetup.Get();
         DadataSetup.TestField("Organization Data Web Link");

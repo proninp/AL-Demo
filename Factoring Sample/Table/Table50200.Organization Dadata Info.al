@@ -231,7 +231,7 @@ table 50200 "Organization Dadata Info"
             Caption = 'Floor';
             DataClassification = ToBeClassified;
         }
-        field(450; "Flat"; Text[10])
+        field(450; "Flat"; Text[15])
         {
             Caption = 'Flat';
             DataClassification = ToBeClassified;

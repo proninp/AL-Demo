@@ -553,6 +553,31 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Dadata Setup - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1536418673 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SQL Connection Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SQL Connection Setup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1536418673 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SQL Connection Setup - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1536418673 - Field 1754670654 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Server Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SQL Connection Setup - Field Server Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1536418673 - Field 3149170790 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Database Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SQL Connection Setup - Field Database Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1536418673 - Field 2457401048 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Command Timeout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SQL Connection Setup - Field Command Timeout - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3706235764 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>Record is not exists.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -642,6 +667,11 @@
           <source>Could not find a token with key "%1"</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Mgt. - NamedType ErrText003</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1016778764 - NamedType 2399024197" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data Source = %1; Initial Catalog = %2; Max Pool Size = 1024; Trusted_Connection = True;</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SQL Connection - NamedType ConnectionStringTemplate</note>
         </trans-unit>
         <trans-unit id="Page 968661380 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Supply Header Card</source>
