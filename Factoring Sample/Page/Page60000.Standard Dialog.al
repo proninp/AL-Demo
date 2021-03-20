@@ -46,16 +46,45 @@ page 60000 "Standard Dialog"
                         CheckComissionDates();
                     end;
                 }
+                field(DadataInn; DadataInnText)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Company INN';
+                    ToolTip = 'Specifies INN of the company.';
+                    Visible = IsDadataRequestVisible;
+                    trigger Onvalidate()
+                    var
+                        DadataApiMgt: Codeunit "Dadata API Mgt.";
+                    begin
+                        DadataApiMgt.CheckInnPattern(DadataInnText);
+                    end;
+                }
+                field(DadataKpp; DadataKppText)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Company KPP';
+                    ToolTip = 'Specifies KPP of the company.';
+                    Visible = IsDadataRequestVisible;
+                    trigger Onvalidate()
+                    var
+                        DadataApiMgt: Codeunit "Dadata API Mgt.";
+                    begin
+                        DadataApiMgt.CheckKppPattern(DadataKppText);
+                    end;
+                }
             }
         }
     }
     var
+        DadataInnText: Text;
+        DadataKppText: Text;
         PaymentAmount: Decimal;
         PaymentCreationDate: Date;
         ComissionStartDate: Date;
         ComissionEndDate: Date;
         IsPaymentControlsVisible: Boolean;
         IsCommissionControlsVisible: Boolean;
+        IsDadataRequestVisible: Boolean;
         ErrText001: Label 'Start date must be earlier then End date.';
 
     procedure SetPaymentValues(NewCreationDate: Date; NewAmount: Decimal)
@@ -78,9 +107,20 @@ page 60000 "Standard Dialog"
 
     procedure GetComissionValues(var NewComissionStartDate: Date; var NewComissionEndDate: Date)
     begin
-
         NewComissionStartDate := ComissionStartDate;
         NewComissionEndDate := ComissionEndDate;
+    end;
+
+    procedure setDadataRequestInnKppValues(NewInnText: Text; NewKppText: Text)
+    begin
+        DadataInnText := NewInnText;
+        DadataKppText := NewKppText;
+    end;
+
+    procedure GetDadataRequestInnKppValues(var NewInnText: Text; var NewKppText: Text)
+    begin
+        NewInnText := DadataInnText;
+        NewKppText := DadataKppText;
     end;
 
     procedure SetPaymentVisible(IsVisibleP: Boolean)
@@ -91,6 +131,11 @@ page 60000 "Standard Dialog"
     procedure SetComissionVisible(IsVisibleP: Boolean)
     begin
         IsCommissionControlsVisible := IsVisibleP;
+    end;
+
+    procedure SetDadataRequestVisible(IsVisibleP: Boolean)
+    begin
+        IsDadataRequestVisible := IsVisibleP;
     end;
 
     local procedure CheckComissionDates()

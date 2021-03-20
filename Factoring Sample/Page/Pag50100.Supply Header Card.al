@@ -78,26 +78,6 @@ page 50100 "Supply Header Card"
             }
         }
     }
-    actions
-    {
-        area(Processing)
-        {
-            action(SendRequest)
-            {
-                ApplicationArea = Basic, Suite;
-                Caption = 'Send Dadata Request';
-                Image = LaunchWeb;
-                ToolTip = 'Send Dadata Request';
-
-                trigger OnAction()
-                var
-                    DadataApiMgt: Codeunit "Dadata API Mgt.";
-                begin
-                    DadataApiMgt.Run();
-                end;
-            }
-        }
-    }
     trigger OnAfterGetCurrRecord()
     begin
         DynamicEditable := CurrPage.Editable;

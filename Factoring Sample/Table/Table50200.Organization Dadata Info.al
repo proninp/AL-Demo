@@ -21,6 +21,16 @@ table 50200 "Organization Dadata Info"
             Caption = 'Full Name';
             DataClassification = ToBeClassified;
         }
+        field(21; "OPF Short"; Text[10])
+        {
+            Caption = 'OPF Short';
+            DataClassification = ToBeClassified;
+        }
+        field(22; "OPF Full"; Text[50])
+        {
+            Caption = 'OPF Full';
+            DataClassification = ToBeClassified;
+        }
         field(30; "Inn"; Text[10])
         {
             Caption = 'INN';

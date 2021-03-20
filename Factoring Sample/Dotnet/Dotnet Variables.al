@@ -10,4 +10,9 @@ dotnet
         type(System.Data.DataColumn; DataColumn) { }
         type(System.Data.DataColumnCollection; DataColumnCollection) { }
     }
+    assembly(System)
+    {
+        type(System.Text.RegularExpressions.Regex; RegExp) { }
+        type(System.Text.RegularExpressions.RegexOptions; RegexOption) { }
+    }
 }

@@ -28,6 +28,10 @@ page 50200 "Organization Dadata Info Card"
                 {
                     ApplicationArea = Basic, Suite;
                 }
+                field("OPF Short"; Rec."OPF Short")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
                 field(OGRN; Rec.OGRN)
                 {
                     ApplicationArea = Basic, Suite;

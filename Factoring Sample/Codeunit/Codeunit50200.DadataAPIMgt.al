@@ -2,22 +2,31 @@ codeunit 50200 "Dadata API Mgt."
 {
     trigger OnRun()
     begin
-        GetCompanyInformation('7706677277', '770801001');
     end;
 
     var
         ErrText001: Label 'Variable of "Organization Dadata Info" record must be temporary.';
         ErrText002: Label 'The web service returned an error message:\Status code: %1\Description: %2';
         ErrText003: Label 'Could not find a token with key "%1"';
+        ErrText004: Label 'You must enter INN value.';
+        ErrText005: Label 'You must enter KPP value.';
+        ErrText006: Label 'Entered value does not compile to specified pattern.';
 
 
-    local procedure GetCompanyInformation(Inn: Text; Kpp: Text) NewEntryNo: BigInteger
+    procedure GetCompanyInformation() NewEntryNo: BigInteger
     var
         JsonDataRec: Record "Organization Dadata Info";
+        Window: Page "Standard Dialog";
         JsonArr: JsonArray;
         JsonTokenToParse: JsonToken;
         JsonText: Text;
+        Inn: Text;
+        Kpp: Text;
     begin
+        Window.SetDadataRequestVisible(true);
+        if not (Window.RunModal() in [Action::LookupOK, Action::OK]) then
+            Error('');
+        Window.GetDadataRequestInnKppValues(Inn, Kpp);
         JsonText := SendOrgRequest(Inn, Kpp);
         if not JsonArr.ReadFrom(JsonText) then begin
             JsonTokenToParse.ReadFrom(JsonText);
@@ -104,6 +113,8 @@ codeunit 50200 "Dadata API Mgt."
         DataJsonObj: JsonObject;
         NameJsonObj: JsonObject;
         NameJsonToken: JsonToken;
+        OPFJsonObj: JsonObject;
+        OPFJsonToken: JsonToken;
     begin
         if DataJsonTokenV.IsObject() then begin
             DataJsonObj := DataJsonTokenV.AsObject();
@@ -125,6 +136,12 @@ codeunit 50200 "Dadata API Mgt."
         if NameJsonToken.IsObject() then begin
             NameJsonObj := NameJsonToken.AsObject();
             JsonDataRecV."Full Name" := GetJsonTokenText(NameJsonObj, 'full_with_opf');
+        end;
+        DataJsonTokenV.SelectToken('opf', OPFJsonToken);
+        if OPFJsonToken.IsObject() then begin
+            OPFJsonObj := OPFJsonToken.AsObject();
+            JsonDataRecV."OPF Full" := GetJsonTokenText(OPFJsonObj, 'full');
+            JsonDataRecV."OPF Short" := GetJsonTokenText(OPFJsonObj, 'short');
         end;
     end;
 
@@ -207,5 +224,31 @@ codeunit 50200 "Dadata API Mgt."
         TextValue := '';
         If not JsonToken.AsValue().IsNull then
             TextValue := JsonToken.AsValue().AsText();
+    end;
+
+    procedure CheckInnPattern(InnText: text)
+    var
+        RegEx: Dotnet RegExp;
+        Pattern: Text;
+    begin
+        if InnText = '' then
+            Error(ErrText004);
+        Pattern := '^\d{10}$';
+        RegEx := RegEx.Regex(Pattern);
+        if not RegEx.IsMatch(InnText) then
+            Error(ErrText006);
+    end;
+
+    procedure CheckKppPattern(KppText: text)
+    var
+        RegEx: Dotnet RegExp;
+        Pattern: Text;
+    begin
+        if KppText = '' then
+            Error(ErrText005);
+        Pattern := '^\d{9}$';
+        RegEx := RegEx.Regex(Pattern);
+        if not RegEx.IsMatch(KppText) then
+            Error(ErrText006);
     end;
 }

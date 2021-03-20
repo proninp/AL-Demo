@@ -248,6 +248,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Full Name - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 4262011469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OPF Short</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field OPF Short - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 3931148982 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OPF Full</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field OPF Full - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2432636252 - Field 1506455323 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>INN</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -668,6 +678,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Mgt. - NamedType ErrText003</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1264339911 - NamedType 1929477016" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must enter INN value.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Mgt. - NamedType ErrText004</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1264339911 - NamedType 1291780399" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must enter KPP value.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Mgt. - NamedType ErrText005</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1264339911 - NamedType 3204870250" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entered value does not compile to specified pattern.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Mgt. - NamedType ErrText006</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1016778764 - NamedType 2399024197" size-unit="char" translate="yes" xml:space="preserve">
           <source>Data Source = %1; Initial Catalog = %2; Max Pool Size = 1024; Trusted_Connection = True;</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -682,16 +707,6 @@
           <source>New,Process,Report,Approve,Release,Posting,Prepare,Order,Request Approval,History,Print/Send,Navigate</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Supply Header Card - Property PromotedActionCategories</note>
-        </trans-unit>
-        <trans-unit id="Page 968661380 - Action 3212637975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Send Dadata Request</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Header Card - Action SendRequest - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 968661380 - Action 3212637975 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Send Dadata Request</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Supply Header Card - Action SendRequest - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 626340827 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Supply Subform</source>
@@ -778,6 +793,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Supply Ledger Entries - Property PromotedActionCategories</note>
         </trans-unit>
+        <trans-unit id="Page 1138302122 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Organization Dadata Info List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Org. Dadata Info List.al - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1138302122 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Processing,Report</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Org. Dadata Info List.al - Property PromotedActionCategories</note>
+        </trans-unit>
+        <trans-unit id="Page 1138302122 - Action 3212637975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send Dadata Request</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Org. Dadata Info List.al - Action SendRequest - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1138302122 - Action 3212637975 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sends Request to Dadata service and recieves company information.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Org. Dadata Info List.al - Action SendRequest - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 291427048 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Organization Dadata Info Card</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -832,6 +867,26 @@
           <source>Specifies comission end date.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control ComissionEndDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1650997837 - Control 2507440344 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Company INN</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control DadataInn - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1650997837 - Control 2507440344 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies INN of the company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control DadataInn - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1650997837 - Control 2313145770 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Company KPP</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control DadataKpp - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1650997837 - Control 2313145770 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies KPP of the company.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control DadataKpp - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1650997837 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>Start date must be earlier then End date.</source>
