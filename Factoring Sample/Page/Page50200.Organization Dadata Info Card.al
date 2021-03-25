@@ -2,6 +2,7 @@ page 50200 "Organization Dadata Info Card"
 {
     ApplicationArea = Basic, Suite;
     Caption = 'Organization Dadata Info Card';
+    InsertAllowed = false;
     PageType = Card;
     SourceTable = "Organization Dadata Info";
     UsageCategory = Documents;

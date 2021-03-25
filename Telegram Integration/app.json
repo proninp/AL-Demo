@@ -1,0 +1,29 @@
+{
+  "id": "0dc83690-c73e-46a4-b4c7-053a573b966b",
+  "name": "Telegram Integration",
+  "publisher": "ProninP",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "Integration with telegram",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "17.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50000,
+      "to": 99999
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://TelegramIntegration.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0",
+  "features": ["TranslationFile"],
+  "target": "OnPrem"
+
+}

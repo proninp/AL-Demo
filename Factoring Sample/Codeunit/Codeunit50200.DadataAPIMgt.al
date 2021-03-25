@@ -58,7 +58,10 @@ codeunit 50200 "Dadata API Mgt."
         Uri := DadataSetup."Organization Data Web Link";
         TokenText := StrSubstNo('Token %1', DadataSetup."Organization Data Token");
 
-        BodyText := StrSubstNo('{"query": "%1", "kpp": "%2"}', Inn, Kpp);
+        if Kpp <> '' then
+            BodyText := StrSubstNo('{"query": "%1", "kpp": "%2"}', Inn, Kpp)
+        else
+            BodyText := StrSubstNo('{"query": "%1", "branch_type": "MAIN"}', Inn);
 
         WebRequest.Method := 'POST';
         WebRequest.SetRequestUri(Uri);
@@ -245,7 +248,7 @@ codeunit 50200 "Dadata API Mgt."
         Pattern: Text;
     begin
         if KppText = '' then
-            Error(ErrText005);
+            exit;
         Pattern := '^\d{9}$';
         RegEx := RegEx.Regex(Pattern);
         if not RegEx.IsMatch(KppText) then

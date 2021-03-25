@@ -884,7 +884,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control DadataKpp - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1650997837 - Control 2313145770 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies KPP of the company.</source>
+          <source>KPP of the company. If you do not specify value of KPP then system will return head otganization.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Standard Dialog - Control DadataKpp - Property ToolTip</note>
         </trans-unit>

@@ -52,6 +52,7 @@ page 60000 "Standard Dialog"
                     Caption = 'Company INN';
                     ToolTip = 'Specifies INN of the company.';
                     Visible = IsDadataRequestVisible;
+                    ShowMandatory = true;
                     trigger Onvalidate()
                     var
                         DadataApiMgt: Codeunit "Dadata API Mgt.";
@@ -63,7 +64,7 @@ page 60000 "Standard Dialog"
                 {
                     ApplicationArea = Basic, Suite;
                     Caption = 'Company KPP';
-                    ToolTip = 'Specifies KPP of the company.';
+                    ToolTip = 'KPP of the company. If you do not specify value of KPP then system will return head otganization.';
                     Visible = IsDadataRequestVisible;
                     trigger Onvalidate()
                     var
