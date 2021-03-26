@@ -1,45 +1,27 @@
 table 50300 "Telegram Bot Setup"
 {
-    DataClassification = ToBeClassified;
-
+    Caption = 'Telegram Bot Setup';
     fields
     {
-        field(1; MyField; Integer)
+        field(1; "Bot Name"; Code[30])
         {
-            DataClassification = ToBeClassified;
+
+        }
+        field(10; "Bot Token"; Text[100])
+        {
+
+        }
+        field(30; "Bot Offset"; BigInteger)
+        {
 
         }
     }
 
     keys
     {
-        key(PK; MyField)
+        key(Key1; "Bot Name")
         {
             Clustered = true;
         }
     }
-
-    var
-        myInt: Integer;
-
-    trigger OnInsert()
-    begin
-
-    end;
-
-    trigger OnModify()
-    begin
-
-    end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
-    end;
-
 }
