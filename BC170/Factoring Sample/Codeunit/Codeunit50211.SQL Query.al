@@ -216,5 +216,4 @@ codeunit 50211 "SQL Query"
         SQLCommandText := SQLCommandTextP;
     end;
 
-
 }

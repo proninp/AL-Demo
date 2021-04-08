@@ -2,7 +2,6 @@ table 50100 "Supply Header"
 {
     Caption = 'Supply Header';
     DataClassification = ToBeClassified;
-
     fields
     {
         field(1; "No."; Code[20])
