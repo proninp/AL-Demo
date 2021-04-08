@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="ru-RU" original="Import Tempate Fix">
+    <body>
+      <group id="body">
+        <trans-unit id="PageExtension 4056607255 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 4056607255">
+          <source>Do you want to replace the existing definition for template %1?</source>
+          <target>Заменить существующее определение для шаблона %1?</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Excel Templates Ext - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4056607255 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 4056607255">
+          <source>Import</source>
+          <target>Импортировать</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Excel Templates Ext - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4056607255 - Action 2670408323 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2820948104">
+          <source>Import Template New</source>
+          <target>Импортировать шаблон (New)</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Excel Templates Ext - Action Import Template New - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

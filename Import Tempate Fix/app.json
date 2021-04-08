@@ -1,0 +1,29 @@
+{
+  "id": "a04165f1-7146-4c08-a562-3ea55d99bb42",
+  "name": "Import Tempate Fix",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "17.0.0.0",
+  "idRanges": [
+    {
+      "from": 50200,
+      "to": 99999
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://ImportTempateFix.com/help/",
+  "showMyCode": true,
+  "runtime": "6.0",
+  "features": ["TranslationFile","GenerateCaptions"],
+  "target": "OnPrem"
+  
+}
