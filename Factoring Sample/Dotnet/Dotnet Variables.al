@@ -15,12 +15,4 @@ dotnet
         type(System.Text.RegularExpressions.Regex; RegExp) { }
         type(System.Text.RegularExpressions.RegexOptions; RegexOption) { }
     }
-    assembly(Microsoft.Dynamics.NAV.RU.ExcelReportBuilder)
-    {
-        type(Microsoft.Dynamics.NAV.RU.ExcelReportBuilder.ReportBuilder; CustomReportBuilder) { }
-    }
-    assembly(WestReportBuilder)
-    {
-
-    }
 }
