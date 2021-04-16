@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="Dadata Integration">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 4205658326 - Field 1077656314 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dadata Token</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Setup - Field Dadata Token - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4205658326 - Field 3371151125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Organization Data Web Link</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Setup - Field Organization Data Web Link - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4205658326 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Setup - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Organization Dadata Info</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 3532935625 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Area - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1746423697 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Area Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1640590040 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area Type Full</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Area Type Full - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 2023169799 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Area With Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Area With Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1358406803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Block</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Block - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 3070380475 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Block Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Block Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 714791889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>City</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field City - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 817351145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>City Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field City Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 2070251504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>City Type Full</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field City Type Full - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 3480593983 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>City With Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field City With Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1856816140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Country - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1214888596 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country ISO Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Country ISO Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 3572756595 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created DateTime</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Created DateTime - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 87146608 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created UserID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Created UserID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1392835601 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Emails</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Emails - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 4199977368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entrance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Entrance - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 2544722213 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Federal District</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Federal District - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 510277017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Flat</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Flat - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1033127489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Flat Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Flat Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 2033398952 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Flat Type Full</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Flat Type Full - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 3867908284 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Floor</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Floor - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 2603141727 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Full Address</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Full Address - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 2981864456 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Full Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Full Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1536952968 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Geo Lat</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Geo Lat - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 3466780636 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Geo Lon</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Geo Lon - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 2256271752 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>House</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field House - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1714142792 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>House Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field House Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 2533219753 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>House Type Full</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field House Type Full - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1506455323 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>INN</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Inn - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 716022845 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KPP</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Kpp - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 3126547048 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OGRN</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field OGRN - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 4099807418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OKATO</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field OKATO - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 2025771988 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OKATO Address</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field OKATO Address - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1735495267 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OKFS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field OKFS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1078653371 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OKOGU</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field OKOGU - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1140027405 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OKPO</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field OKPO - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 9775822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OKTMO</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field OKTMO - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1381682944 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OKTMO Address</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field OKTMO Address - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 904627781 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OKVED</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field OKVED - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1053412509 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OKVED Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field OKVED Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 3931148982 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OPF Full</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field OPF Full - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 4262011469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OPF Short</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field OPF Short - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 3742008721 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Phones</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Phones - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 392788764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Postal Box</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Postal Box - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1215194884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Postal Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Postal Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 2241665020 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Region</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Region - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 908049596 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Region Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Region Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 3338479133 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Region Type Full</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Region Type Full - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 525702446 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Region With Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Region With Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 81325660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Regional Kladr ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Regional Kladr ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 2197284175 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Settlement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Settlement - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 102903639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Settlement Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Settlement Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1741733938 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Settlement Type Full</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Settlement Type Full - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 1504241633 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Settlement With Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Settlement With Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 752586859 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Street</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Street - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 2178662403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Street Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Street Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 2845936638 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Street Type Full</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Street Type Full - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 907775885 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Street With Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Street With Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2432636252 - Field 4093968767 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Office</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Tax Office - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4205658326 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dadata Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Dadata Setup - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

@@ -17,5 +17,6 @@
   "idRanges": [ { "from": 50000, "to": 99999 } ],
   "contextSensitiveHelpUrl": "https://DadataIntegration.com/help/",
   "showMyCode": true,
-  "runtime": "7.0"
+  "runtime": "7.0",
+  "features": ["TranslationFile"]
 }
