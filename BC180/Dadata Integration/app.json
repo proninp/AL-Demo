@@ -1,0 +1,21 @@
+{
+  "id": "f147fedf-5f05-4bae-b8b6-4a2d44746009",
+  "name": "Dadata Integration",
+  "publisher": "ProninP",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "18.0.0.0",
+  "idRanges": [ { "from": 50000, "to": 99999 } ],
+  "contextSensitiveHelpUrl": "https://DadataIntegration.com/help/",
+  "showMyCode": true,
+  "runtime": "7.0"
+}
