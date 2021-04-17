@@ -9,6 +9,8 @@
             "server": "http://localhost",
             "serverInstance": "BC180",
             "authentication": "Windows",
+            "startupObjectType": "Page",
+            "startupObjectId": 50002,
             "breakOnError": true,
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
