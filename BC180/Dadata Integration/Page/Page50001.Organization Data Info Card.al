@@ -133,5 +133,27 @@ page 50001 "Organization Dadata Info Card"
             }
         }
     }
+    actions
+    {
+        area(Processing)
+        {
+            action("Create Customer")
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Create Customer';
+                Image = NewCustomer;
+                ToolTip = 'Crates new customer from dadata info.';
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                trigger OnAction()
+                var
+                    DadataApiMgt: Codeunit "Dadata API Management";
+                begin
+                    DadataApiMgt.CreateCustomer(Rec);
+                end;
+            }
+        }
+    }
 
 }

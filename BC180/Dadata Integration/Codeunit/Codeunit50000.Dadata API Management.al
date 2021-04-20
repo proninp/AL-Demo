@@ -101,7 +101,7 @@ codeunit 50000 "Dadata API Management"
             SuggestionsJsonObj.Get('data', DataJsonToken);
             ParseGeneralInformation(DataJsonToken, JsonDataRecV);
             ParseAddressInformation(DataJsonToken, JsonDataRecV);
-            JsonDataRecV.Insert();
+            JsonDataRecV.Insert(true);
         end;
         NewEntryNo := JsonDataRecV."Entry No.";
     end;
@@ -244,6 +244,46 @@ codeunit 50000 "Dadata API Management"
         RegEx := RegEx.Regex(Format(KppPattern));
         if not RegEx.IsMatch(KppText) then
             Error(ErrText006);
+    end;
+
+    procedure CreateCustomer(OrgDadataInfoP: Record "Organization Dadata Info")
+    var
+        Customer: Record Customer;
+        OrgDadataInfo: Record "Organization Dadata Info";
+        ConfirmText001: Label 'Customer with INN %1 and KPP %2 already exists. Do you want update data?';
+    begin
+
+        OrgDadataInfo := OrgDadataInfoP;
+        OrgDadataInfo.Find('=');
+        OrgDadataInfo.TestField(Inn);
+        OrgDadataInfo.TestField(Kpp);
+        Customer.Reset();
+        Customer.SetRange("VAT Registration No.", OrgDadataInfo.Inn);
+        Customer.SetRange("KPP Code", OrgDadataInfo.Kpp);
+        if Customer.FindFirst() then begin
+            if not Confirm(StrSubstNo(ConfirmText001, OrgDadataInfo.Inn, OrgDadataInfo.Kpp)) then
+                Error('');
+        end else begin
+            Clear(Customer);
+            Customer."VAT Registration No." := OrgDadataInfo.Inn;
+            Customer."KPP Code" := OrgDadataInfo.Kpp;
+            Customer.Insert(true);
+        end;
+        Customer.Name := Copystr(OrgDadataInfo.Name, 1, MaxStrLen(Customer.Name));
+        if StrLen(OrgDadataInfo.Name) > StrLen(Customer.Name) then
+            Customer."Name 2" := CopyStr(OrgDadataInfo.Name, MaxStrLen(Customer.Name) + 1, MaxStrLen(Customer."Name 2"));
+        Customer."Full Name" := OrgDadataInfo."Full Name";
+        Customer."OKPO Code" := OrgDadataInfo.OKPO;
+        Customer.Address := CopyStr(OrgDadataInfo."Full Address", 1, MaxStrLen(Customer.Address));
+        if StrLen(OrgDadataInfo."Full Address") > StrLen(Customer.Address) then
+            Customer."Address 2" := CopyStr(OrgDadataInfo."Full Address", MaxStrLen(Customer.Address) + 1, MaxStrLen(Customer."Address 2"));
+        Customer."Post Code" := OrgDadataInfo."Postal Code";
+        Customer."Country/Region Code" := OrgDadataInfo."Country ISO Code";
+        Customer.County := OrgDadataInfo.Country;
+        Customer.City := OrgDadataInfo.City;
+        Customer.County := OrgDadataInfo."Area";
+        Customer.Modify(true);
+        Page.Run(Page::"Customer Card", Customer);
     end;
 
 }
