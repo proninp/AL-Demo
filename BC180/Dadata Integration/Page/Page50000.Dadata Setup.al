@@ -22,6 +22,10 @@ page 50000 "Dadata Setup"
                 {
                     ApplicationArea = Basic, Suite;
                 }
+                field("Affiliated Companies Web Link"; "Affiliated Companies Web Link")
+                {
+                    ApplicationArea = Basic, Suite;
+                }
             }
         }
     }

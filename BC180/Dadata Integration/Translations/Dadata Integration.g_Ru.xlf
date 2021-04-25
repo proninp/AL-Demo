@@ -3,6 +3,168 @@
   <file datatype="xml" source-language="en-US" target-language="ru-RU" original="Dadata Integration">
     <body>
       <group id="body">
+        <trans-unit id="Table 3745205589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dadata Affiliated Company</source>
+          <target>Dadata Аффилированые Организации</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 3018398906 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Actuality Date</source>
+          <target>Дата актуальности сведений</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Actuality Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 3168444338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address</source>
+          <target>Адрес</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Address - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 2511249670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Affiliated With INN</source>
+          <target>Аффилирована с ИНН</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Affiliated With INN - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 748949104 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Branch Type</source>
+          <target>Тип подразделения</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Branch Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 1284480795 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Branches Count</source>
+          <target>Количество подразделений</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Branches Count - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 3572756595 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created DateTime</source>
+          <target>Создано дата время</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Created DateTime - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 87146608 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created UserID</source>
+          <target>Создано пользователем</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Created UserID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 1788700016 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Detailed Status</source>
+          <target>Детальный статус</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Detailed Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 3462416294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Detailed Status Description</source>
+          <target>Детальный статус описание</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Detailed Status Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 1506455323 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>INN Code</source>
+          <target>ИНН</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Inn - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 3437568817 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Internal Dadata ID</source>
+          <target>Dadata внутренний идентификатор</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Internal Dadata ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 4056025085 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>KPP Code</source>
+          <target>КПП</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field KPP - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 1871383991 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Liquidation Date</source>
+          <target>Дата ликвидации</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Liquidation Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target>Название</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 3126547048 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OGRN</source>
+          <target>ОГРН</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field OGRN - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 4099807418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OKATO</source>
+          <target>ОКАТО</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field OKATO - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 1735495267 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OKFS</source>
+          <target>ОКФС</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field OKFS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 1078653371 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OKOGU</source>
+          <target>ОКОГУ</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field OKOGU - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 1140027405 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OKPO</source>
+          <target>ОКПО</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field OKPO - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 9775822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OKTMO</source>
+          <target>ОКТМО</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field OKTMO - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 904627781 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OKVED</source>
+          <target>ОКВЭД</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field OKVED - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 922893109 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Organization Type</source>
+          <target>Тип организации</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Organization Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 806367967 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Registration Date</source>
+          <target>Дата регистрации</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Registration Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target>Название</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3745205589 - Field 2647579790 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status Description</source>
+          <target>Описание статуса</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Affiliated Company - Field Status Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4205658326 - Field 872532292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Affiliated Companies Web Link</source>
+          <target>Ссылка для получения информации об аффилированых компаниях</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Dadata Setup - Field Affiliated Companies Web Link - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 4205658326 - Field 1077656314 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dadata Token</source>
           <target>Dadata Токен</target>

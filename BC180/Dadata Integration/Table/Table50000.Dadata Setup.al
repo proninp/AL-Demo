@@ -19,6 +19,11 @@ table 50000 "Dadata Setup"
             Caption = 'Organization Data Web Link';
             DataClassification = ToBeClassified;
         }
+        field(30; "Affiliated Companies Web Link"; Text[100])
+        {
+            Caption = 'Affiliated Companies Web Link';
+            DataClassification = ToBeClassified;
+        }
     }
 
     keys
