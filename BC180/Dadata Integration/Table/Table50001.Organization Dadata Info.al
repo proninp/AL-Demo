@@ -1,6 +1,7 @@
 table 50001 "Organization Dadata Info"
 {
     Caption = 'Organization Dadata Info';
+    DataCaptionFields = Name, Inn, Kpp;
     DataClassification = ToBeClassified;
 
     fields
