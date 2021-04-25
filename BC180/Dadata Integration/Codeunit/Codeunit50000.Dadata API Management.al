@@ -249,6 +249,7 @@ codeunit 50000 "Dadata API Management"
     procedure CreateCustomer(OrgDadataInfoP: Record "Organization Dadata Info")
     var
         Customer: Record Customer;
+        Vendor: Record Vendor;
         OrgDadataInfo: Record "Organization Dadata Info";
         ConfirmText001: Label 'Customer with INN %1 and KPP %2 already exists. Do you want update data?';
     begin
@@ -282,8 +283,59 @@ codeunit 50000 "Dadata API Management"
         Customer.County := OrgDadataInfo.Country;
         Customer.City := OrgDadataInfo.City;
         Customer.County := OrgDadataInfo."Area";
+        Vendor.Reset();
+        Vendor.SetRange("VAT Registration No.", Customer."VAT Registration No.");
+        Vendor.SetRange("KPP Code", Customer."KPP Code");
+        if Vendor.FindFirst() and (Customer."Vendor No." <> Vendor."No.") then
+            Customer.Validate("Vendor No.", Vendor."No.");
         Customer.Modify(true);
         Page.Run(Page::"Customer Card", Customer);
+    end;
+
+    procedure CreateVendor(OrgDadataInfoP: Record "Organization Dadata Info")
+    var
+        Customer: Record Customer;
+        Vendor: Record Vendor;
+        OrgDadataInfo: Record "Organization Dadata Info";
+        ConfirmText001: Label 'Vendor with INN %1 and KPP %2 already exists. Do you want update data?';
+    begin
+
+        OrgDadataInfo := OrgDadataInfoP;
+        OrgDadataInfo.Find('=');
+        OrgDadataInfo.TestField(Inn);
+        OrgDadataInfo.TestField(Kpp);
+        Vendor.Reset();
+        Vendor.SetRange("VAT Registration No.", OrgDadataInfo.Inn);
+        Vendor.SetRange("KPP Code", OrgDadataInfo.Kpp);
+        if Vendor.FindFirst() then begin
+            if not Confirm(StrSubstNo(ConfirmText001, OrgDadataInfo.Inn, OrgDadataInfo.Kpp)) then
+                Error('');
+        end else begin
+            Clear(Vendor);
+            Vendor."VAT Registration No." := OrgDadataInfo.Inn;
+            Vendor."KPP Code" := OrgDadataInfo.Kpp;
+            Vendor.Insert(true);
+        end;
+        Vendor.Name := Copystr(OrgDadataInfo.Name, 1, MaxStrLen(Vendor.Name));
+        if StrLen(OrgDadataInfo.Name) > StrLen(Vendor.Name) then
+            Vendor."Name 2" := CopyStr(OrgDadataInfo.Name, MaxStrLen(Vendor.Name) + 1, MaxStrLen(Vendor."Name 2"));
+        Vendor."Full Name" := OrgDadataInfo."Full Name";
+        Vendor."OKPO Code" := OrgDadataInfo.OKPO;
+        Vendor.Address := CopyStr(OrgDadataInfo."Full Address", 1, MaxStrLen(Vendor.Address));
+        if StrLen(OrgDadataInfo."Full Address") > StrLen(Vendor.Address) then
+            Vendor."Address 2" := CopyStr(OrgDadataInfo."Full Address", MaxStrLen(Vendor.Address) + 1, MaxStrLen(Vendor."Address 2"));
+        Vendor."Post Code" := OrgDadataInfo."Postal Code";
+        Vendor."Country/Region Code" := OrgDadataInfo."Country ISO Code";
+        Vendor.County := OrgDadataInfo.Country;
+        Vendor.City := OrgDadataInfo.City;
+        Vendor.County := OrgDadataInfo."Area";
+        Customer.Reset();
+        Customer.SetRange("VAT Registration No.", Vendor."VAT Registration No.");
+        Customer.SetRange("KPP Code", Vendor."KPP Code");
+        if Customer.FindFirst() and (Vendor."Customer No." <> Customer."No.") then
+            Vendor.Validate("Customer No.", Customer."No.");
+        Vendor.Modify(true);
+        Page.Run(Page::"Vendor Card", Vendor);
     end;
 
 }

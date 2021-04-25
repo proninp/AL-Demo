@@ -448,6 +448,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Management - Method CreateCustomer - NamedType ConfirmText001</note>
         </trans-unit>
+        <trans-unit id="Codeunit 2856358562 - Method 2335178540 - NamedType 1963392026" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor with INN %1 and KPP %2 already exists. Do you want update data?</source>
+          <target>Поставщик с ИНН %1 и КПП %2 уже существует. Обновить даные?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Management - Method CreateVendor - NamedType ConfirmText001</note>
+        </trans-unit>
         <trans-unit id="Page 4205658326 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dadata Setup</source>
           <target>Dadata настройка</target>
@@ -543,6 +549,18 @@
           <target>Создать клиента</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Organization Dadata Info Card - Action Create Customer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 291427048 - Action 3658907060 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Crates new vendor from dadata info.</source>
+          <target>Создать поставщика из информации об организации Dadata.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Organization Dadata Info Card - Action Create Vendor - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 291427048 - Action 3658907060 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Vendor</source>
+          <target>Создать поставщика</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Organization Dadata Info Card - Action Create Vendor - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1650997837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Set Data</source>

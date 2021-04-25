@@ -153,6 +153,22 @@ page 50001 "Organization Dadata Info Card"
                     DadataApiMgt.CreateCustomer(Rec);
                 end;
             }
+            action("Create Vendor")
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Create Vendor';
+                Image = NewOpportunity;
+                ToolTip = 'Crates new vendor from dadata info.';
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                trigger OnAction()
+                var
+                    DadataApiMgt: Codeunit "Dadata API Management";
+                begin
+                    DadataApiMgt.CreateVendor(Rec);
+                end;
+            }
         }
     }
 
