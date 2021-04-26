@@ -20,9 +20,9 @@ page 50003 "Standard Dialog"
                     ShowMandatory = true;
                     trigger Onvalidate()
                     var
-                        DadataApiMgt: Codeunit "Dadata API Management";
+                        CheckInputDataMgt: Codeunit "Check Input Data Mgt.";
                     begin
-                        DadataApiMgt.CheckInnPattern(DadataInnText);
+                        CheckInputDataMgt.CheckInnPattern(DadataInnText);
                     end;
                 }
                 field(DadataKpp; DadataKppText)
@@ -31,11 +31,12 @@ page 50003 "Standard Dialog"
                     Caption = 'Company KPP';
                     ToolTip = 'KPP of the company. If you do not specify value of KPP then system will return head otganization.';
                     Visible = IsDadataRequestVisible;
+                    Editable = IsCompanyInformationRequest;
                     trigger Onvalidate()
                     var
-                        DadataApiMgt: Codeunit "Dadata API Management";
+                        CheckInputDataMgt: Codeunit "Check Input Data Mgt.";
                     begin
-                        DadataApiMgt.CheckKppPattern(DadataKppText);
+                        CheckInputDataMgt.CheckKppPattern(DadataKppText);
                     end;
                 }
             }
@@ -45,6 +46,7 @@ page 50003 "Standard Dialog"
         DadataInnText: Text;
         DadataKppText: Text;
         IsDadataRequestVisible: Boolean;
+        IsCompanyInformationRequest: Boolean;
 
     procedure setDadataRequestInnKppValues(NewInnText: Text; NewKppText: Text)
     begin
@@ -61,5 +63,12 @@ page 50003 "Standard Dialog"
     procedure SetDadataRequestVisible(IsVisibleP: Boolean)
     begin
         IsDadataRequestVisible := IsVisibleP;
+        IsCompanyInformationRequest := IsVisibleP;
+    end;
+
+    procedure SetDadataRequestVisible(IsVisibleP: Boolean; IsKppEditable: Boolean)
+    begin
+        IsDadataRequestVisible := IsVisibleP;
+        IsCompanyInformationRequest := IsKppEditable;
     end;
 }
