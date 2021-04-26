@@ -1,14 +1,8 @@
-codeunit 50000 "Dadata API Management"
+codeunit 50000 "Dadata Org. Info API Mgt."
 {
     var
-        ErrText001: Label 'Variable of "%1" record must be temporary.';
-        ErrText002: Label 'The web service returned an error message:\Status code: %1\Description: %2';
-        ErrText003: Label 'Could not find a token with key "%1"';
-        ErrText004: Label 'You must enter INN value.';
-        ErrText005: Label 'You must enter KPP value.';
-        ErrText006: Label 'Entered value does not compile to specified pattern.';
-        InnPattern: Label '^\d{10}$';
-        KppPattern: Label '^\d{9}$';
+        ErrText001: Label 'The web service returned an error message:\Status code: %1\Description: %2';
+        ErrText002: Label 'Could not find a token with key "%1"';
 
     procedure GetCompanyInformation() NewEntryNo: BigInteger
     var
@@ -78,7 +72,7 @@ codeunit 50000 "Dadata API Management"
         if WebClient.Send(WebRequest, WebResponse) then begin
             WebResponse.Content().ReadAs(ResponseText);
         end else
-            Error(ErrText002, format(WebResponse.HttpStatusCode), format(WebResponse.ReasonPhrase));
+            Error(ErrText001, format(WebResponse.HttpStatusCode), format(WebResponse.ReasonPhrase));
     end;
 
     local procedure ParseCompanyData(JsonTokenToParseP: JsonToken; var JsonDataRecV: Record "Organization Dadata Info") NewEntryNo: BigInteger
@@ -218,32 +212,10 @@ codeunit 50000 "Dadata API Management"
         JsonToken: JsonToken;
     begin
         if not JsonObject.Get(TokenKey, JsonToken) then
-            Error(ErrText003, TokenKey);
+            Error(ErrText002, TokenKey);
         TextValue := '';
         If not JsonToken.AsValue().IsNull then
             TextValue := JsonToken.AsValue().AsText();
-    end;
-
-    procedure CheckInnPattern(InnText: text)
-    var
-        RegEx: Dotnet RegExp;
-    begin
-        if InnText = '' then
-            Error(ErrText004);
-        RegEx := RegEx.Regex(Format(InnPattern));
-        if not RegEx.IsMatch(InnText) then
-            Error(ErrText006);
-    end;
-
-    procedure CheckKppPattern(KppText: text)
-    var
-        RegEx: Dotnet RegExp;
-    begin
-        if KppText = '' then
-            exit;
-        RegEx := RegEx.Regex(Format(KppPattern));
-        if not RegEx.IsMatch(KppText) then
-            Error(ErrText006);
     end;
 
     procedure CreateCustomer(OrgDadataInfoP: Record "Organization Dadata Info")
