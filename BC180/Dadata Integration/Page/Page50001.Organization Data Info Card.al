@@ -148,7 +148,7 @@ page 50001 "Organization Dadata Info Card"
                 PromotedIsBig = true;
                 trigger OnAction()
                 var
-                    DadataApiMgt: Codeunit "Dadata API Management";
+                    DadataApiMgt: Codeunit "Dadata Org. Info API Mgt.";
                 begin
                     DadataApiMgt.CreateCustomer(Rec);
                 end;
@@ -164,7 +164,7 @@ page 50001 "Organization Dadata Info Card"
                 PromotedIsBig = true;
                 trigger OnAction()
                 var
-                    DadataApiMgt: Codeunit "Dadata API Management";
+                    DadataApiMgt: Codeunit "Dadata Org. Info API Mgt.";
                 begin
                     DadataApiMgt.CreateVendor(Rec);
                 end;

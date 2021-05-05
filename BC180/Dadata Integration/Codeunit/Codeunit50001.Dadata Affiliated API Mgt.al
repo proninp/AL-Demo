@@ -72,8 +72,6 @@ codeunit 50001 "Dadata Affiliated API Mgt."
     end;
 
     local procedure ParseAffiliatedCompanyData(JsonTokenToParseP: JsonToken; var JsonDataRecV: Record "Dadata Affiliated Company")
-    var
-        myInt: Integer;
     begin
         exit;
     end;

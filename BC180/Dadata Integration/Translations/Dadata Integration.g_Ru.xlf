@@ -556,65 +556,101 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Organization Dadata Info - Field Tax Office - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Codeunit 2856358562 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Variable of "%1" record must be temporary.</source>
-          <target>Переменная записи "%1" должна быть объявлена временной</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Management - NamedType ErrText001</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2856358562 - NamedType 1460689422" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The web service returned an error message:\Status code: %1\Description: %2</source>
-          <target>Веб-сервис вернул сообщение об ошибке:\Статус: %1\Описание: %2</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Management - NamedType ErrText002</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2856358562 - NamedType 822992805" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Could not find a token with key "%1"</source>
-          <target>Не существует токена с ключом %1</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Management - NamedType ErrText003</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2856358562 - NamedType 1929477016" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 1862322980 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must enter INN value.</source>
           <target>Необходимо указать значение ИНН.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Management - NamedType ErrText004</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Check Input Data Mgt. - NamedType ErrText001</note>
         </trans-unit>
-        <trans-unit id="Codeunit 2856358562 - NamedType 1291780399" size-unit="char" translate="yes" xml:space="preserve">
-          <source>You must enter KPP value.</source>
-          <target>Необходимо указать значение КПП.</target>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Management - NamedType ErrText005</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 2856358562 - NamedType 3204870250" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 1862322980 - NamedType 1460689422" size-unit="char" translate="yes" xml:space="preserve">
           <source>Entered value does not compile to specified pattern.</source>
           <target>Введённое значение не соответствует заданному шаблону.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Management - NamedType ErrText006</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Check Input Data Mgt. - NamedType ErrText002</note>
         </trans-unit>
-        <trans-unit id="Codeunit 2856358562 - NamedType 3177342699" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 1862322980 - NamedType 3177342699" size-unit="char" translate="yes" xml:space="preserve">
           <source>^\d{10}$</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Management - NamedType InnPattern</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Check Input Data Mgt. - NamedType InnPattern</note>
         </trans-unit>
-        <trans-unit id="Codeunit 2856358562 - NamedType 402897373" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 1862322980 - NamedType 402897373" size-unit="char" translate="yes" xml:space="preserve">
           <source>^\d{9}$</source>
           <target></target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Management - NamedType KppPattern</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Check Input Data Mgt. - NamedType KppPattern</note>
         </trans-unit>
-        <trans-unit id="Codeunit 2856358562 - Method 2400675204 - NamedType 1963392026" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 3670603976 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The web service returned an error message:\Status code: %1\Description: %2</source>
+          <target>Веб сервис вернул сообщение об ошибке:\Код статуса: %1\Описание: %2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata Affiliated API Mgt. - NamedType ErrText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2464521961 - NamedType 3842566867" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The web service returned an error message:\Status code: %1\Description: %2</source>
+          <target>Веб сервис вернул сообщение об ошибке:\Код статуса: %1\Описание: %2</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata Org. Info API Mgt. - NamedType ErrText001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2464521961 - NamedType 1460689422" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Could not find a token with key "%1"</source>
+          <target>Не существует токена с ключом %1</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata Org. Info API Mgt. - NamedType ErrText002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2464521961 - Method 2400675204 - NamedType 1963392026" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer with INN %1 and KPP %2 already exists. Do you want update data?</source>
           <target>Клиент с ИНН %1 и КПП %2 уже существует. Обновить даные?</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Management - Method CreateCustomer - NamedType ConfirmText001</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata Org. Info API Mgt. - Method CreateCustomer - NamedType ConfirmText001</note>
         </trans-unit>
-        <trans-unit id="Codeunit 2856358562 - Method 2335178540 - NamedType 1963392026" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 2464521961 - Method 2335178540 - NamedType 1963392026" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor with INN %1 and KPP %2 already exists. Do you want update data?</source>
           <target>Поставщик с ИНН %1 и КПП %2 уже существует. Обновить даные?</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata API Management - Method CreateVendor - NamedType ConfirmText001</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Dadata Org. Info API Mgt. - Method CreateVendor - NamedType ConfirmText001</note>
+        </trans-unit>
+        <trans-unit id="Page 229390073 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dadata Affiliated Company Card</source>
+          <target>Dadata крточка аффилированной компании</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Dadata Affiliated Company Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 229390073 - Control 4253802235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Additional</source>
+          <target>Дополнительная информация</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Dadata Affiliated Company Card - Control Additional - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 229390073 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target>Общее</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Dadata Affiliated Company Card - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 229390073 - Control 4207495877 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Legal</source>
+          <target>Юридическая информация</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Dadata Affiliated Company Card - Control Legal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 229390073 - Control 3448339824 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Other</source>
+          <target>Прочее</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Dadata Affiliated Company Card - Control Other - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 229390073 - Action 241596933 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sends Request to Dadata service and recieves Affiliated company information.</source>
+           <target>Запрос Dadata на получение информации об аффилированных компаниях</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Dadata Affiliated Company Card - Action Send Affiliated Company Request - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 229390073 - Action 241596933 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send Dadata Affiliated Request</source>
+          <target>Dadata отправить запрос</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Dadata Affiliated Company Card - Action Send Affiliated Company Request - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4205658326 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dadata Setup</source>

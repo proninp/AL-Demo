@@ -1,16 +1,16 @@
 page 50004 "Dadata Affiliated Company Card"
 {
-
     Caption = 'Dadata Affiliated Company Card';
     PageType = Card;
     SourceTable = "Dadata Affiliated Company";
-
+    UsageCategory = Documents;
     layout
     {
         area(content)
         {
             group(General)
             {
+                Caption = 'General';
                 field(Name; Rec.Name)
                 {
                     ApplicationArea = Basic, Suite;
@@ -34,6 +34,7 @@ page 50004 "Dadata Affiliated Company Card"
             }
             group(Legal)
             {
+                Caption = 'Legal';
                 field(OGRN; Rec.OGRN)
                 {
                     ApplicationArea = Basic, Suite;
@@ -69,6 +70,7 @@ page 50004 "Dadata Affiliated Company Card"
             }
             group(Additional)
             {
+                Caption = 'Additional';
                 field("Actuality Date"; Rec."Actuality Date")
                 {
                     ApplicationArea = Basic, Suite;
@@ -108,6 +110,7 @@ page 50004 "Dadata Affiliated Company Card"
             }
             group(Other)
             {
+                Caption = 'Other';
                 field("Created DateTime"; Rec."Created DateTime")
                 {
                     ApplicationArea = Basic, Suite;
@@ -122,6 +125,29 @@ page 50004 "Dadata Affiliated Company Card"
                 }
             }
         }
+    }
+    actions
+    {
+        area(Processing)
+        {
+            action("Send Affiliated Company Request")
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Send Dadata Affiliated Request';
+                Image = LaunchWeb;
+                ToolTip = 'Sends Request to Dadata service and recieves Affiliated company information.';
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                trigger OnAction()
+                var
+                    DadataAffilMgt: Codeunit "Dadata Affiliated API Mgt.";
+                begin
+                    DadataAffilMgt.GetAffiliatedCompanies();
+                end;
+            }
+        }
+
     }
 
 }

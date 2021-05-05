@@ -94,7 +94,7 @@ page 50002 "Org. Dadata Info List.al"
                 PromotedIsBig = true;
                 trigger OnAction()
                 var
-                    DadataApiMgt: Codeunit "Dadata API Management";
+                    DadataApiMgt: Codeunit "Dadata Org. Info API Mgt.";
                 begin
                     if Rec.Get(DadataApiMgt.GetCompanyInformation()) then;
                     Rec.SetPosition(Rec.GetPosition());
